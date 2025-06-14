@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Tangerine:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8cc8bfb38e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+</head>
+
+<body class="bg-blue-50 pb-50">
+    <section id="header" class="relative min-h-screen bg-cover bg-center text-white"
+        style="background-image: url('./media/backdrop.jpg');">
+        <nav
+            class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont">
+            <div class="flex items-center gap-4 ps-5">
+                <img class="h-12 navlink" src="./media/logo.png" alt="Logo">
+                <div class="text-white text-2xl md:text-3xl navlink font-extrabold">JOURNEY</div>
+            </div>
+            <div class="hidden xl:flex gap-10 text-xl font-bold">
+                <a class="navlink text-white px-10" href="index.html">Home</a>
+                <a class="navlink text-white px-10" href="">Explore</a>
+                <a class="navlink text-white px-10" href="">Hotels</a>
+                <a class="navlink text-white px-10" href="">Flights</a>
+                <a class="navlink text-white px-10" href="index.html#footer">Contact</a>
+            </div>
+        </nav>
+
+        <nav id="navmobile">
+            <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden">
+                <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-house text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Home</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-magnifying-glass text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Explore</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-bed-front text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Hotels</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-plane text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Flights</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-phone text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Contact</p>
+                </a>
+            </div>
+        </nav>
+        <div class="text-white flex flex-col justify-center h-9/10 items-center gap-20">
+            <h1 class="font-black text-center text-5xl md:text-7xl lg:text-9xl md:ps-30 px-5 myfont md:pt-40 lg:px-50">
+                Ready for
+                your next getaway?</h1>
+            <div class="flex flex-row gap-6 sm:gap-10">
+                <a href="index.html#getstarted"><button
+                        class="myfont font-bold bg-white text-black h-15 p-5 rounded-2xl w-35 sm:w-50 hover:bg-slate-300 font-semibold">Get
+                        Started</button></a>
+                <a href="index.html#footer"><button
+                        class="myfont font-bold bg-blue-500 h-15 p-5 rounded-2xl w-35 sm:w-50 hover:bg-blue-600 font-semibold">Contact
+                        Us</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="getstarted" class="scroll-mt-48">
+        <div class="my-30 flex flex-col items-center px-4">
+            <h1 class="text-center text-3xl myfont font-semibold mb-10 text-blue-800">Get Started</h1>
+
+            <div class="flex flex-col lg:flex-row justify-center gap-8 lg:gap-10 w-full max-w-7xl">
+
+                <div
+                    class="text-center myfont shadow-xl p-8 flex flex-col justify-between items-center bg-white w-full lg:w-1/3 rounded-2xl">
+                    <img class="w-full h-56 object-cover mb-4" src="./media/image1x1.png" alt="">
+                    <p class="font-semibold">Discover beautiful cities, scenic spots, and hidden gems around the world.
+                        Find the perfect place
+                        for your next adventure.</p>
+                    <a href=""><button
+                            class="myfont font-bold bg-blue-500 px-4 py-3 rounded-2xl w-56 mt-5 text-white hover:bg-blue-600">
+                            Explore Destinations
+                        </button></a>
+
+                </div>
+
+                <div
+                    class="text-center myfont shadow-xl p-8 flex flex-col justify-between items-center bg-white w-full lg:w-1/3 rounded-2xl">
+                    <img class="w-full h-56 object-cover mb-4" src="./media/image2x1.png" alt="">
+                    <p class="font-semibold">Search and compare the best flight deals. Fast, easy, and secure booking to
+                        get you where you
+                        need to go.</p>
+
+                    <a href=""><button
+                            class="myfont font-bold bg-blue-500 px-4 py-3 rounded-2xl w-56 mt-5 text-white hover:bg-blue-600">
+                            Book Flights
+                        </button></a>
+
+                </div>
+
+                <div
+                    class="text-center myfont shadow-xl p-8 flex flex-col justify-between items-center bg-white w-full lg:w-1/3 rounded-2xl">
+                    <img class="w-full h-56 object-cover mb-4" src="./media/image3x1.png" alt="">
+                    <p class="font-semibold">Choose from a wide range of stays — from luxury resorts to budget-friendly
+                        rooms. Comfort and
+                        convenience, guaranteed.</p>
+                    <a href="">
+                        <button
+                            class="myfont font-bold bg-blue-500 px-4 py-3 rounded-2xl w-56 mt-5 text-white hover:bg-blue-600">
+                            Book Hotels
+                        </button>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-20" id="trusted">
+        <div class="w-full px-4 sm:px-10 lg:px-80 text-center">
+            <h2 class="text-2xl sm:text-3xl font-semibold myfont mb-12 text-blue-800">
+                Trusted by Travelers Worldwide
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 myfont">
+                <div class="text-center">
+                    <h3 class="text-5xl font-extrabold text-blue-500 myfont">500K+</h3>
+                    <p class="text-lg mt-2 text-gray-700 font-semibold">Happy Users</p>
+                </div>
+
+                <div class="text-center">
+                    <h3 class="text-5xl font-extrabold text-blue-500 myfont">1.2M+</h3>
+                    <p class="text-lg mt-2 text-gray-700 font-semibold">Successful Bookings</p>
+                </div>
+
+                <div class="text-center">
+                    <h3 class="text-5xl font-extrabold text-blue-500 myfont">98%</h3>
+                    <p class="text-lg mt-2 text-gray-700 font-semibold">Customer Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="why">
+        <div class="w-full text-center px-6 my-15">
+            <h1 class="text-center text-3xl myfont font-semibold mb-10 text-blue-800">Why you need a Travel Companion
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:px-80 myfont">
+                <div class="bg-white p-6 rounded-2xl shadow-xl transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        🌍
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 ">Wide Destination Range</h3>
+                    <p class="text-gray-600 font-semibold">Explore from popular cities to hidden gems around the globe.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-xl transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        💸
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Best Price Guarantee</h3>
+                    <p class="text-gray-600 font-semibold">We offer competitive rates with no hidden charges.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-xl transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        🕒
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">24/7 Customer Support</h3>
+                    <p class="text-gray-600 font-semibold">Our team is here to help you anytime, anywhere.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-xl transition">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        🛫
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast & Easy Booking</h3>
+                    <p class="text-gray-600 font-semibold">Book your dream vacation in just a few clicks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers">
+        <h1 class="text-center text-3xl myfont font-semibold mb-10 text-blue-800">Explore Exciting Offers
+        </h1>
+        <div class="flex flex-col lg:flex-row w-full items-center lg:px-50 px-6 gap-5 ">
+            <div class="lg:h-[700px] h-[700px] lg:w-1/3 md:w-full rounded-2xl flex flex-col items-center justify-center p-8 myfont text-white"
+                style="background-image: url('https://images.unsplash.com/photo-1541614256854-6fbf99e006b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHRvdXJpc218ZW58MHx8MHx8fDA%3D'); background-size: cover; text-shadow: 4px 4px 8px rgba(0,0,0,1);">
+                <h2 class="text-3xl font-bold mb-4 text-center">✈️ Grab Exciting Flight Deals – Up to 50% Off!</h2>
+                <p class="text-lg max-w-xs text-center font-semibold">Fly smarter with exclusive airfare discounts —
+                    save up to 50% on
+                    domestic
+                    and international flights. Book early for the best prices!</p>
+                <a href=""><button
+                        class="myfont font-bold bg-blue-500 px-4 py-3 rounded-2xl w-full mt-5 text-white hover:bg-blue-600">
+                        Explore
+                    </button></a>
+            </div>
+            <div class="lg:h-[700px] h-[700px] lg:w-1/3 md:w-full rounded-2xl flex flex-col items-center justify-center p-8 myfont text-white"
+                style="background-image: url('https://images.unsplash.com/photo-1598751337485-0d57b0c50b83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRvdXJpc218ZW58MHx8MHx8fDA%3D'); background-size: cover;text-shadow: 4px 4px 8px rgba(0,0,0,1);">
+                <h2 class="text-3xl font-bold mb-4 text-center">🏨 Stay in Style – Hotels Up to 40% Off</h2>
+                <p class="text-lg max-w-xs text-center font-semibold">Enjoy comfort and convenience with up to 40% off
+                    on hotels
+                    worldwide. Choose from over 100,000+ stays — luxury to budget-friendly.</p>
+                <a href=""><button
+                        class="myfont font-bold bg-blue-500 px-4 py-3 rounded-2xl w-full mt-5 text-white hover:bg-blue-600">
+                        Explore
+                    </button></a>
+            </div>
+            <div class="lg:h-[700px] h-[700px] lg:w-1/3 md:w-full rounded-2xl flex flex-col items-center justify-center p-8 myfont text-white"
+                style="background-image: url('https://images.unsplash.com/photo-1609861517208-e5b7b4cd4b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRvdXJpc218ZW58MHx8MHx8fDA%3D'); background-size: cover;text-shadow: 4px 4px 8px rgba(0,0,0,1);">
+                <h2 class="text-3xl font-bold mb-4 text-center">🌍 Save Up to 30% on Travel Packages</h2>
+                <p class="text-lg max-w-xs text-center font-semibold">Bundle your flight + hotel + activities and save
+                    up to 30%
+                    instantly. Perfect for weekend getaways or long holidays!</p>
+                <a href=""><button
+                        class="myfont font-bold bg-blue-500 px-4 py-3 rounded-2xl w-full mt-5 text-white hover:bg-blue-600">
+                        Explore
+                    </button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="my-20 lg:px-80 px-6">
+        <h1 class=" text-center text-3xl myfont font-semibold mb-10 text-blue-800">About Us
+        </h1>
+        <div class="history lg:mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-4 sm:gap-14">
+                <img class="w-full h-auto lg:h-[400px] rounded-2xl"
+                    src="https://images.unsplash.com/photo-1606744666360-2f22c8b4a45b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHRvdXJpc218ZW58MHx8MHx8fDA%3D"
+                    alt="">
+                <div class="lg:col-span-3 flex flex-col sm:gap-6 myfont font-semibold">
+                    <p class="py-6 lg:py-0">Journey was founded in 2012 by a passionate group of travel enthusiasts who
+                        believed booking a trip should be as exciting as taking one. Starting out as a small platform
+                        focused on domestic flight and hotel bookings, we’ve grown rapidly over the past few years. By
+                        2020, we had served over 100,000 users, and by 2025, that number grew to more than 1 million
+                        successful bookings across 50+ countries.</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-sm ">
+                        <div class="flex flex-col gap-8">
+                            <div class="flex gap-4 p-5 bg-white shadow-md rounded-2xl">
+                                <img class="h-15 rounded-full"
+                                    src="https://img.freepik.com/free-photo/woman-cheerful-studio-portrait-concept_53876-14463.jpg?uid=R198138143&ga=GA1.1.1043180550.1728824842&semt=ais_hybrid&w=740"
+                                    alt="">
+                                <p>“Journey has revolutionized the way modern travelers book and explore. It’s my top
+                                    recommendation for readers planning their next adventure.”<br><span class="italic">—
+                                        Amelia Greene, Global Explorer Magazine</span></p>
+                            </div>
+                            <div class="flex gap-4 p-5 bg-white shadow-md rounded-2xl">
+                                <img class="h-15 rounded-full"
+                                    src="https://img.freepik.com/free-photo/medium-shot-smiley-guy-with-beard-headphones_23-2148328993.jpg?uid=R198138143&ga=GA1.1.1043180550.1728824842&semt=ais_hybrid&w=740"
+                                    alt="">
+                                <p>“From seamless flight bookings to reliable hotel options it’s the kind of platform I
+                                    trust for both business and leisure.”<br><span class="italic">— Rajeev Khanna, World
+                                        Routes Review</span></p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-8">
+                            <div class="flex gap-4 p-5 bg-white shadow-md rounded-2xl">
+                                <img class="h-15 rounded-full"
+                                    src="https://img.freepik.com/free-photo/worldface-thai-woman-white-background_53876-146193.jpg?uid=R198138143&ga=GA1.1.1043180550.1728824842&semt=ais_hybrid&w=740"
+                                    alt="">
+                                <p> “I’ve reviewed dozens of travel platforms over the years, but Journey stands out for
+                                    its clean interface and consistent performance.”<br><span class="italic">— Lena
+                                        Walsh, The Globe Weekly</span></p>
+
+                            </div>
+                            <div class="flex gap-4 p-5 bg-white shadow-md rounded-2xl">
+                                <img class="h-15 rounded-full"
+                                    src="https://img.freepik.com/free-photo/portrait-smiling-charming-young-man-grey-t-shirt-standing-against-plain-background_23-2148213406.jpg?uid=R198138143&ga=GA1.1.1043180550.1728824842&semt=ais_hybrid&w=740"
+                                    alt="">
+                                <p>“What Journey offers isn’t just convenience — it’s peace of mind. Their
+                                    traveler-first mindset is setting a new benchmark in the industry.”<br><span
+                                        class="italic">— Dr. Samuel Torres, Institute of Travel Studies</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-10 lg:pt-0 philosophy lg:mb-10 myfont">
+            <h1 class=" text-center text-3xl myfont font-semibold mb-10 text-blue-800">Our Philosophy
+            </h1>
+            <div class="grid grid-cols-1 lg:grid-cols-4 sm:gap-14 font-semibold">
+                <div class="lg:col-span-3 flex flex-col sm:gap-10 myfont">
+                    <p class="py-6 lg:py-0">At Journey, we believe that travel is more than just reaching a destination
+                        — it's about the experiences, stories, and connections made along the way. Our goal is to make
+                        travel easy, inspiring, and accessible for everyone. Whether it's exploring new cultures,
+                        finding hidden gems, or simply taking a break from the everyday, we’re here to help people
+                        discover the joy of travel with convenience and confidence.</p>
+                    <div class="flex flex-col gap-8 text-sm">
+                        <div class="p-5 rounded-2xl bg-white shadow-md">
+                            “Journey brings a refreshing simplicity to travel planning — intuitive, fast, and
+                            surprisingly personal. From spontaneous weekend getaways to long-haul adventures, it
+                            takes the stress out of organizing every detail.”<br><br>
+                            <span class="italic">— Travel Desk, The New York Times</span>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white shadow-md">
+                            “Perfect for those who want inspiration and convenience. Journey makes wanderlust actionable
+                            by combining curated recommendations with seamless booking, turning dreams into real,
+                            memorable experiences.”<br><br>
+                            <span class="italic">— Editorial Team, Nat Geo Traveller</span></p>
+                        </div>
+                    </div>
+                </div>
+                <img class="w-full h-auto rounded-2xl mt-10 md:mt-0"
+                    src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG91cmlzbXxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <footer class="bg-blue-200 py-10 px-6 myfont w-full font-semibold">
+            <div class="w-full sm:flex justify-evenly sm:justify-ccenter">
+                <div>
+                    <div class="flex items-center h-auto">
+                        <img width="50px" height="auto" src="./media/logo.png" alt="">
+                        <h3 class="text-2xl font-bold ps-3">JOURNEY</h3>
+                    </div>
+                    <p class="text-m">Your trusted partner in travel – explore the world with ease and
+                        confidence.</p>
+                </div>
+                <div class="flex justify-between lg:justify-center mt-5 lg:gap-20">
+                    <div>
+                        <h4 class="font-semibold mb-3">Company</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class=" ps-5">
+                        <h4 class="font-semibold mb-3 text-black">Support</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4 text-xl">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-10 text-center text-gray-500 text-sm font-semibold lg:mb-0 mb-20">
+                © 2025 Journey. All rights reserved.
+            </div>
+        </footer>
+    </section>
+
+
+
+
+
+    <script>
+        const navbar = document.querySelector("nav");
+        const links = document.querySelectorAll('.navlink');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 250) {
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('bg-white');
+                navbar.classList.add('shadow-md');
+                links.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-blue-500');
+                });
+            } else {
+                navbar.classList.remove('bg-white');
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('shadow-md');
+                links.forEach(link => {
+                    link.classList.remove('text-black');
+                    link.classList.add('text-white');
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

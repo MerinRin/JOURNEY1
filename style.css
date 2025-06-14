@@ -1,0 +1,15 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    height: 300vh;
+}
+
+#header{
+    height: 100vh;
+}
+
+.myfont{
+font-family: "Poiret One", sans-serif;
+}
