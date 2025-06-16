@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey | Travel Website</title>
+
+    <!-- favicon  -->
+     <link rel="shortcut icon" href="./media/logo.png" type="image/x-icon">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font awesome kit  -->
+    <script src="https://kit.fontawesome.com/8cc8bfb38e.js" crossorigin="anonymous"></script>
+
+    <!-- tailwind css cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
+        rel="stylesheet">
+
+    <!-- style  -->
+    <style>
+        .myfont {
+            font-family: "Poiret One", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- nav section  -->
+    <nav
+        class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont">
+        <div class="flex items-center gap-4 ps-5">
+            <img class="h-12 navlink" src="./media/logo.png" alt="Logo">
+            <div class="text-white text-2xl md:text-3xl font-black navlink">JOURNEY</div>
+        </div>
+        <div class="hidden xl:flex gap-10 text-xl font-bold">
+            <a class="navlink text-white px-10" href="index.html">Home</a>
+            <a class="navlink text-white px-10" href="explore.html">Explore</a>
+            <a class="navlink text-white px-10" href="">Hotels</a>
+            <a class="navlink text-white px-10" href="">Flights</a>
+            <a class="navlink text-white px-10" href="">Contact</a>
+        </div>
+    </nav>
+    <nav id="navmobile">
+        <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden">
+            <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-house text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Home</p>
+            </a>
+            <a href="explore.html" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-magnifying-glass text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Explore</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-bed-front text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Hotels</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-plane text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Flights</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-phone text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Contact</p>
+            </a>
+        </div>
+    </nav>
+
+    <!-- popular destinations hero section -->
+    <section class="relative w-full h-screen overflow-hidden">
+        <!-- Fullscreen Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://pickyourtrail-video.gumlet.io/media/videos/banner/pyt_homepage_video.mp4?w=713&h=480"
+                type="video/mp4" />
+        </video>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Centered Content on Top -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 myfont">
+            <h1 class="text-4xl md:text-6xl font-extrabold">Explore Your Dream Getaway</h1>
+            <p class="mt-4 text-lg md:text-xl max-w-xl">
+                Find the best holiday packages crafted just for you — stunning beaches, ancient cities, and
+                unforgettable moments.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- popular destinations card section  -->
+    <section class="px-6 py-12 bg-blue-50">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-center text-3xl myfont font-semibold mb-10 text-blue-800">POPULAR DESTINATIONS</h2>
+            <div class="space-x-2">
+
+            </div>
+        </div>
+
+        <!-- Destinations 1  -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10 myfont">
+
+            <!-- Card Template -->
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/free-photo/beautiful-shot-buildings-with-bell-tower-distance-white-sky_181624-5412.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Europe"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">Old World Charm</p>
+                    <h3 class="text-lg font-bold">Europe</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/free-photo/young-woman-standing-temple-gates-lempuyang-luhur-temple-bali-indonesia-vintage-tone_335224-369.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Bali" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">Cultural Paradise</p>
+                    <h3 class="text-lg font-bold">Bali</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/free-photo/girl-night-with-phone_1157-16842.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Dubai"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">The City of Life</p>
+                    <h3 class="text-lg font-bold">Dubai</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/free-photo/sculpture-city-long-exposure-complex-amazing_1122-1706.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Singapore"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">The Lion City</p>
+                    <h3 class="text-lg font-bold">Singapore</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/free-photo/beautiful-village-snow-covered-mountain_181624-4248.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Kashmir"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">Paradise on Earth</p>
+                    <h3 class="text-lg font-bold">Kashmir</h3>
+                </div>
+            </a>
+        </div>
+
+        <!-- Destinations 2  -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 myfont">
+
+            <!-- Card Template -->
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/free-photo/resort-sky-bay-travel-exotic_1232-4572.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Europe"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">Create Memories in </p>
+                    <h3 class="text-lg font-bold">Maldives</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/free-photo/chureito-pagoda-fuji-mountain-sunset-japan_335224-200.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Bali" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">LAND OF RISING SUN</p>
+                    <h3 class="text-lg font-bold">Japan</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/premium-photo/sigiriya-lion-rock-ancient-rock-fortress-dambulla-central-province-sri-lanka_253104-461.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Dubai"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">FALL IN LOVE WITH</p>
+                    <h3 class="text-lg font-bold">Srilanka</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/premium-photo/wat-rong-khun-chiangrai-thailand_35355-3574.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Singapore"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">THE KINGDOM OF</p>
+                    <h3 class="text-lg font-bold">Thailand</h3>
+                </div>
+            </a>
+
+            <a href="./packages.html" class="relative rounded overflow-hidden group">
+                <img src="https://img.freepik.com/premium-photo/beautiful-padmanabhaswamy-temple-reflected-pond-sunset-thiruvananthapuram-city-kerala-south-india_211251-1056.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Kashmir"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="text-xs font-semibold uppercase">GOD'S OWN COUNTRY</p>
+                    <h3 class="text-lg font-bold">Kerala</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- travel style section  -->
+    <div class="bg-blue-50">
+        <section class="bg-blue-300 py-10 px-4 text-center rounded-3xl max-w-7xl mx-auto px-4 md:px-8 myfont">
+            <h2 class="text-white text-xl md:text-2xl font-semibold">CHOOSE YOUR</h2>
+            <p class="text-blue-700 text-3xl font-semibold italic mt-1">Travel Style</p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-6">
+                <!-- Honeymoon -->
+                <a href="#honeymoon"
+                    class="bg-white rounded-[50px] w-36 h-48 overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-end relative">
+                    <img src="https://img.freepik.com/free-photo/homey-valentine-s-day-celebration_23-2151911093.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                        alt="Honeymoon" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                    <div class="z-10 text-center text-blue-900 relative bg-white bg-opacity-60 py-2 rounded-b-[50px]">
+                        <h3 class="font-bold text-lg">Honeymoon</h3>
+                        <p class="text-xs font-semibold">TRIP</p>
+                    </div>
+                </a>
+
+                <!-- Family -->
+                <a href="#family"
+                    class="bg-white rounded-[50px] w-36 h-48 overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-end relative">
+                    <img src="https://img.freepik.com/premium-photo/family-wearing-sunglasses-vacations_1048944-25300956.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                        alt="Family" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                    <div class="z-10 text-center text-yellow-600 relative bg-white bg-opacity-60 py-2 rounded-b-[50px]">
+                        <h3 class="font-bold text-lg">Family</h3>
+                        <p class="text-xs font-semibold">VACATION</p>
+                    </div>
+                </a>
+
+                <!-- Beach -->
+                <a href="#beach"
+                    class="bg-white rounded-[50px] w-36 h-48 overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-end relative">
+                    <img src="https://img.freepik.com/free-photo/full-shot-people-walking-beach_23-2149487113.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                        alt="Beach" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                    <div class="z-10 text-center text-sky-600 relative bg-white bg-opacity-60 py-2 rounded-b-[50px]">
+                        <h3 class="font-bold text-lg">Beach</h3>
+                        <p class="text-xs font-semibold">HOLIDAY</p>
+                    </div>
+                </a>
+
+                <!-- Adventure -->
+                <a href="#adventure"
+                    class="bg-white rounded-[50px] w-36 h-48 overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-end relative">
+                    <img src="https://img.freepik.com/free-photo/hikers-mountains_181624-380.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                        alt="Adventure" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                    <div class="z-10 text-center text-red-700 relative bg-white bg-opacity-60 py-2 rounded-b-[50px]">
+                        <h3 class="font-bold text-lg">Adventure</h3>
+                        <p class="text-xs font-semibold">TRAILS</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- visa free destinations  -->
+    <section class="bg-blue-50 py-10 px-4 sm:px-6 lg:px-12 rounded-3xl">
+        <h2 class="text-center text-3xl myfont font-semibold mb-10 text-blue-800">VISA FREE DESTINATIONS</h2>
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 auto-rows-[200px] md:auto-rows-[250px] lg:auto-rows-[300px] myfont">
+
+            <!-- Mauritius -->
+            <a href="./packages.html"
+                class="relative col-span-1 lg:col-span-2 row-span-1 rounded-xl overflow-hidden shadow-lg group">
+                <img src="https://img.freepik.com/premium-photo/danxia-mountain-g-china-is-colorful-uni_1202914-52917.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Mauritius"
+                    class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h3 class="text-lg font-bold">Mauritius</h3>
+                    <p class="text-sm">From ₹62,500</p>
+                </div>
+            </a>
+
+            <!-- Thailand (Tall Card) -->
+            <a href="./packages.html"
+                class="relative col-span-1 lg:col-span-2 lg:row-span-2 rounded-xl overflow-hidden shadow-lg group">
+                <img src="https://img.freepik.com/premium-photo/landmark-wat-thai-with-shadow-reflection-sunset-temple-wat-none-kum-nakhon-ratchasima_51519-955.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Thailand"
+                    class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h3 class="text-xl font-bold">Thailand</h3>
+                    <p class="text-sm">From ₹37,500</p>
+                </div>
+            </a>
+
+            <!-- Maldives -->
+            <a href="./packages.html"
+                class="relative col-span-1 lg:col-span-2 row-span-1 rounded-xl overflow-hidden shadow-lg group">
+                <img src="https://img.freepik.com/free-photo/aerial-view-tropical-island-turquoise-water-luxurious-water-villas-tropical-island-resort-maldives-holiday-vacation-background-concept-boost-up-color-processing_1253-791.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Maldives"
+                    class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h3 class="text-lg font-bold">Maldives</h3>
+                    <p class="text-sm">From ₹43,854</p>
+                </div>
+            </a>
+
+            <!-- Malaysia -->
+            <a href="./packages.html" class="relative col-span-1 rounded-xl overflow-hidden shadow-lg group">
+                <img src="https://img.freepik.com/free-photo/view-world-monument-celebrate-world-heritage-day_23-2151297227.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Malaysia"
+                    class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h3 class="text-base font-bold">Malaysia</h3>
+                    <p class="text-xs">From ₹48,750</p>
+                </div>
+            </a>
+
+            <!-- Sri Lanka -->
+            <a href="./packages.html" class="relative col-span-1 rounded-xl overflow-hidden shadow-lg group">
+                <img src="https://img.freepik.com/premium-photo/beautiful-holiday-nature-amazing-mountain-landscape-adventure-travel-destination_1105964-8326.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Sri Lanka"
+                    class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h3 class="text-base font-bold">Sri Lanka</h3>
+                    <p class="text-xs">From ₹30,000</p>
+                </div>
+            </a>
+
+            <!-- Seychelles -->
+            <a href="./packages.html"
+                class="relative col-span-1 lg:col-span-2 rounded-xl overflow-hidden shadow-lg group">
+                <img src="https://img.freepik.com/premium-photo/aerial-view-rocks-beach-island_1048944-20122398.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                    alt="Seychelles"
+                    class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-4 left-4 text-white z-10">
+                    <h3 class="text-lg font-bold">Seychelles</h3>
+                    <p class="text-sm">From ₹25,330</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- footer section  -->
+    <section id="footer">
+        <footer class="bg-blue-200 py-10 px-6 myfont w-full font-semibold">
+            <div class="w-full sm:flex justify-evenly sm:justify-ccenter">
+                <div>
+                    <div class="flex items-center h-auto">
+                        <img width="50px" height="auto" src="./media/logo.png" alt="">
+                        <h3 class="text-2xl font-bold ps-3">JOURNEY</h3>
+                    </div>
+                    <p class="text-m">Your trusted partner in travel – explore the world with ease and
+                        confidence.</p>
+                </div>
+                <div class="flex justify-between lg:justify-center mt-5 lg:gap-20">
+                    <div>
+                        <h4 class="font-semibold mb-3">Company</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class=" ps-5">
+                        <h4 class="font-semibold mb-3 text-black">Support</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4 text-xl">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-10 text-center text-gray-500 text-sm font-semibold lg:mb-0 mb-20">
+                © 2025 Journey. All rights reserved.
+            </div>
+        </footer>
+    </section>
+
+</body>
+<script>
+    const navbar = document.querySelector("nav");
+    const links = document.querySelectorAll('.navlink');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 105) {
+            navbar.classList.remove('bg-transparent');
+            navbar.classList.add('bg-white');
+            navbar.classList.add('shadow-md');
+            links.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-blue-500');
+            });
+        } else {
+            navbar.classList.remove('bg-white');
+            navbar.classList.add('bg-transparent');
+            navbar.classList.remove('shadow-md');
+            links.forEach(link => {
+                link.classList.remove('text-black');
+                link.classList.add('text-white');
+            });
+        }
+    });
+</script>
+
+</html>

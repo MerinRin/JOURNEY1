@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey | Travel Website</title>
+
+    <!-- favicon  -->
+     <link rel="shortcut icon" href="./media/logo.png" type="image/x-icon">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font awesome kit  -->
+    <script src="https://kit.fontawesome.com/8cc8bfb38e.js" crossorigin="anonymous"></script>
+
+    <!-- tailwind css cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
+        rel="stylesheet">
+
+    <!-- mobile navbar logo  -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <!-- style  -->
+    <style>
+        .myfont {
+            font-family: "Poiret One", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="body">
+
+    <div class="populartours">
+
+        <!-- nav section  -->
+        <nav
+            class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont">
+            <div class="flex items-center gap-4 ps-5">
+                <img class="h-12 navlink" src="./media/logo.png" alt="Logo">
+                <div class="text-white text-2xl md:text-3xl font-black navlink">JOURNEY</div>
+            </div>
+            <div class="hidden xl:flex gap-10 text-xl font-bold">
+                <a class="navlink text-white px-10" href="index.html">Home</a>
+                <a class="navlink text-white px-10" href="explore.html">Explore</a>
+                <a class="navlink text-white px-10" href="">Hotels</a>
+                <a class="navlink text-white px-10" href="">Flights</a>
+                <a class="navlink text-white px-10" href="">Contact</a>
+            </div>
+        </nav>
+        <nav id="navmobile">
+            <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden">
+                <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-house text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Home</p>
+                </a>
+                <a href="explore.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-magnifying-glass text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Explore</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-bed-front text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Hotels</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-plane text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Flights</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-phone text-blue-600 text-2xl"></i>
+                    <p class="text-slate-400 myfont text-xs">Contact</p>
+                </a>
+            </div>
+        </nav>
+
+        <!-- hero section  -->
+        <section class="relative h-screen bg-cover bg-center flex items-center"
+            style="background-image: url('https://websitedemos.net/tourism-04/wp-content/uploads/sites/344/2019/02/bg-02-free-img.jpg');">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 max-w-3xl px-6 md:px-10 lg:px-20 text-white mt-50 myfont">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+                    Travel &amp; Explore the World
+                </h1>
+                <p class="mt-4 text-base sm:text-lg md:text-xl">
+                    Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <a href="./populartours.html">
+                    <button class="mt-6 bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md font-bold mb-10">
+                        BOOK MY TOUR
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <!-- popular tour section  -->
+        <section class="bg-blue-50 py-16 px-10 myfont">
+
+            <!-- Left Title Section -->
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="text-sm italic font-semibold text-gray-600 mb-2">our most</p>
+                <h2 class="text-center text-3xl myfont font-semibold mb-10 text-blue-800">Popular Destinations</h2>
+                <p class="text-gray-600 font-semibold max-w-2xl mx-auto mb-6">
+                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi
+                    elit consequat ipsum, nec sagittis sem nibh id elit.
+                </p>
+                <a href="./populartours.html">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md font-bold mb-15">
+                        VIEW ALL DESTINATIONS
+                    </button>
+                </a>
+
+
+                <!-- Cards Section -->
+                <div class="w-full flex flex-wrap gap-4 py-5">
+
+                    <!-- Card 1 -->
+                    <a href="./packages.html"
+                        class="w-full md:w-[48%] lg:w-[23.5%] h-[400px] overflow-hidden rounded-lg shadow-lg relative group">
+                        <div class="absolute inset-0 transition-transform duration-500 scale-100 group-hover:scale-110 bg-cover bg-center"
+                            style="background-image: url('https://img.freepik.com/free-photo/resort-sky-bay-travel-exotic_1232-4572.jpg')">
+                        </div>
+
+                        <!-- Dark overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                        <!-- Text -->
+                        <div class="absolute bottom-0 p-4 z-10 text-white">
+                            <h4 class="font-bold italic text-lg drop-shadow">Maldives</h4>
+                            <p class="text-xl font-semibold mt-1 drop-shadow">Sunny Ari Atoll</p>
+                            <p class="italic mt-1 text-sm drop-shadow">From ₹45,350</p>
+                        </div>
+                    </a>
+
+
+                    <!-- Card 2 (staggered on md+ only) -->
+                    <a href="./packages.html" class="w-full md:w-[48%] lg:w-[23.5%] py-0 md:py-10">
+                        <div class="h-[400px] relative rounded-lg shadow-lg overflow-hidden group">
+
+                            <!-- Background Image with Hover Zoom -->
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 scale-100 group-hover:scale-110"
+                                style="background-image: url('https://img.freepik.com/free-photo/architecture-ancient-monument-world-heritage-day-celebration_23-2151297178.jpg')">
+                            </div>
+
+                            <!-- Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                            </div>
+
+                            <!-- Text Content -->
+                            <div class="absolute bottom-0 p-4 z-10 text-white">
+                                <h4 class="font-bold italic text-lg drop-shadow">England</h4>
+                                <p class="text-xl font-semibold mt-1 drop-shadow">Majestic Big Ben</p>
+                                <p class="italic mt-1 text-sm drop-shadow">From ₹78,635</p>
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <!-- Card 3 - Italy -->
+                    <a href="./packages.html"
+                        class="w-full md:w-[48%] lg:w-[23.5%] h-[400px] relative rounded-lg shadow-lg overflow-hidden group">
+                        <!-- Image -->
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style="background-image: url('https://img.freepik.com/free-photo/venice-carnival-celebration_23-2151936555.jpg')">
+                        </div>
+
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+
+                        <!-- Content -->
+                        <div class="absolute bottom-0 p-4 z-10 text-white">
+                            <h4 class="font-bold italic text-lg drop-shadow">Italy</h4>
+                            <p class="text-xl font-semibold mt-1 drop-shadow">Discover Venice</p>
+                            <p class="italic mt-1 text-sm drop-shadow">From ₹67,550</p>
+                        </div>
+                    </a>
+
+                    <!-- Card 4 - Turkey (with top padding on md+) -->
+                    <a href="./packages.html" class="w-full md:w-[48%] lg:w-[23.5%] py-0 md:py-10">
+                        <div class="h-[400px] relative rounded-lg shadow-lg overflow-hidden group">
+                            <!-- Image -->
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                style="background-image: url('https://img.freepik.com/free-photo/beautiful-alcazar-toledo-stone-fortification-toledo-spain_181624-51641.jpg')">
+                            </div>
+
+                            <!-- Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                            </div>
+
+                            <!-- Content -->
+                            <div class="absolute bottom-0 p-4 z-10 text-white">
+                                <h4 class="font-bold italic text-lg drop-shadow">Turkey</h4>
+                                <p class="text-xl font-semibold mt-1 drop-shadow">Historical Istanbul</p>
+                                <p class="italic mt-1 text-sm drop-shadow">From ₹58,750</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- latest reviews section  -->
+        <section class="relative bg-cover bg-center py-20 px-4 myfont"
+            style="background-image: url('https://img.freepik.com/free-photo/wide-shot-brown-house-sandy-seashore-by-sea-surrounded-with-rocks-trees_181624-3254.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740');">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <div class="relative max-w-7xl mx-auto text-center text-white">
+                <p class="text-sm font-semibold italic mb-2">our customers love us</p>
+                <h2 class="text-center text-3xl myfont font-semibold mb-10 text-blue-600">Latest Reviews</h2>
+
+                <!-- Testimonials Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 text-left">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm p-6 rounded-lg text-left text-white border border-white/20 shadow-md">
+                        <p class="italic text-sm mb-4">“Aenean sollicitudin, quis auctor, nisi elit consequat ipsum, nec
+                            sagittis sem nibh id elit. Duis sed odio.”</p>
+                        <p class="text-yellow-400 mb-2">
+                            ⭐⭐⭐⭐⭐
+                        </p>
+                        <p class="font-semibold">Lauren Munoz</p>
+                    </div>
+
+                    <!-- Card 2 (highlighted) -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm p-6 rounded-lg text-left text-white shadow-lg border border-white/10">
+                        <p class="italic text-sm mb-4">“Proin gravida nibh vel velit auctor aliquet. Aenean
+                            sollicitudin, lorem quis auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                            Duis sed odio amet nibh cursus a sit amet mauris.”</p>
+                        <p class="text-yellow-400 mb-2">
+                            ⭐⭐⭐⭐⭐
+                        </p>
+                        <p class="font-semibold">Ronald Snyder</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm p-6 rounded-lg text-left text-white border border-white/20 shadow-md">
+                        <p class="italic text-sm mb-4">“Proin gravida nibh vel velit auctor aliquet. Aenean
+                            sollicitudin, lorem quis auctor, nec sagittis sem nibh id elit. Duis sed odio amet nibh
+                            cursus a sit amet mauris.”</p>
+                        <p class="text-yellow-400 mb-2">
+                            ⭐⭐⭐⭐⭐
+                        </p>
+                        <p class="font-semibold">Jessica Hamilton</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm p-6 rounded-lg text-left text-white border border-white/20 shadow-lg">
+                        <p class="italic text-sm mb-4">“Aenean sollicitudin, quis auctor, nisi elit consequat ipsum, nec
+                            sagittis sem nibh id elit. Duis sed odio.”</p>
+                        <p class="text-yellow-500 mb-2">
+                            ⭐⭐⭐⭐⭐
+                        </p>
+                        <p class="font-semibold">Sean West</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- best offers  -->
+        <section class="bg-blue-50 py-12 px-4 myfont">
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="text-sm italic font-semibold text-gray-600 mb-2">our trending</p>
+                <h2 class="text-center text-3xl myfont font-semibold mb-10 text-blue-800">Best Offers</h2>
+                <p class="text-gray-600 font-semibold max-w-2xl mx-auto mb-6">
+                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi
+                    elit consequat ipsum, nec sagittis sem nibh id elit.
+                </p>
+                <a href="./populartours.html">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md font-bold mb-15">
+                        VIEW ALL TOURS
+                    </button>
+                </a>
+
+                <!-- Tour Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+                    <!-- Card 1 -->
+                    <a href="./packages.html"
+                        class="relative h-96 rounded overflow-hidden shadow-lg transition-transform hover:scale-105">
+                        <img src="https://img.freepik.com/free-photo/eiffel-tower-paris-with-gorgeous-colors-autumn_268835-828.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                            alt="Eiffel Tower" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white">
+                            <p class="text-lg italic font-semibold">France</p>
+                            <h3 class="text-xl font-bold">Amazing Eiffel Tower</h3>
+                            <p class="mt-1 text-sm">From ₹51,250</p>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="./packages.html"
+                        class="relative h-96 rounded overflow-hidden shadow-lg transition-transform hover:scale-105">
+                        <img src="https://img.freepik.com/free-photo/two-tourist-standing-road-near-snowy-mountain_23-2148153673.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                            alt="Swiss Alps" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white">
+                            <p class="text-lg italic font-semibold">Switzerland</p>
+                            <h3 class="text-xl font-bold">Faithful Swiss Alps</h3>
+                            <p class="mt-1 text-sm">From ₹42,450</p>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="./packages.html"
+                        class="relative h-96 rounded overflow-hidden shadow-lg transition-transform hover:scale-105">
+                        <img src="https://img.freepik.com/free-photo/black-pink-floral-concrete-building_400718-35.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                            alt="Madrid" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white">
+                            <p class="text-lg italic font-semibold">Spain</p>
+                            <h3 class="text-xl font-bold">Elegant Madrid</h3>
+                            <p class="mt-1 text-sm">From ₹55,425</p>
+                        </div>
+                    </a>
+
+                    <!-- Card 4 -->
+                    <a href="./packages.html"
+                        class="relative h-96 rounded overflow-hidden shadow-lg transition-transform hover:scale-105">
+                        <img src="https://img.freepik.com/free-photo/nature-sea-landscape-with-idyllic-view-water_23-2151358737.jpg?uid=R115651747&ga=GA1.1.1514354004.1740156066&semt=ais_hybrid&w=740"
+                            alt="Rio de Janeiro" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white">
+                            <p class="text-lg italic font-semibold">Brazil</p>
+                            <h3 class="text-xl font-bold">Rio de Janeiro</h3>
+                            <p class="mt-1 text-sm">From ₹43,150</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- footer section  -->
+        <section id="footer">
+            <footer class="bg-blue-200 py-10 px-6 myfont w-full font-semibold">
+                <div class="w-full sm:flex justify-evenly sm:justify-ccenter">
+                    <div>
+                        <div class="flex items-center h-auto">
+                            <img width="50px" height="auto" src="./media/logo.png" alt="">
+                            <h3 class="text-2xl font-bold ps-3">JOURNEY</h3>
+                        </div>
+                        <p class="text-m">Your trusted partner in travel – explore the world with ease and
+                            confidence.</p>
+                    </div>
+                    <div class="flex justify-between lg:justify-center mt-5 lg:gap-20">
+                        <div>
+                            <h4 class="font-semibold mb-3">Company</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Press</a></li>
+                            </ul>
+                        </div>
+                        <div class=" ps-5">
+                            <h4 class="font-semibold mb-3 text-black">Support</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Help Center</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-3">Follow Us</h4>
+                            <div class="flex space-x-4 text-xl">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mt-10 text-center text-gray-500 text-sm font-semibold lg:mb-0 mb-20">
+                    © 2025 Journey. All rights reserved.
+                </div>
+            </footer>
+        </section>
+
+    </div>
+</body>
+<script>
+    const navbar = document.querySelector("nav");
+    const links = document.querySelectorAll('.navlink');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 105) {
+            navbar.classList.remove('bg-transparent');
+            navbar.classList.add('bg-white');
+            navbar.classList.add('shadow-md');
+            links.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-blue-500');
+            });
+        } else {
+            navbar.classList.remove('bg-white');
+            navbar.classList.add('bg-transparent');
+            navbar.classList.remove('shadow-md');
+            links.forEach(link => {
+                link.classList.remove('text-black');
+                link.classList.add('text-white');
+            });
+        }
+    });
+
+</script>
+
+</html>
