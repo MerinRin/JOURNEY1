@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey | Travel Website</title>
+
+    <!-- favicon  -->
+     <link rel="shortcut icon" href="./media/logo.png" type="image/x-icon">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font awesome kit  -->
+    <script src="https://kit.fontawesome.com/8cc8bfb38e.js" crossorigin="anonymous"></script>
+
+    <!-- tailwind css cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
+        rel="stylesheet">
+
+    <!-- style  -->
+    <style>
+        .myfont {
+            font-family: "Poiret One", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+
+  <!-- Desktop Navbar -->
+  <nav class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont">
+    <div class="flex items-center gap-4 ps-5">
+      <img class="h-12 navlink" src="/media/logo.png" alt="Logo">
+      <div class="text-blue-500 text-2xl md:text-3xl font-black navlink">JOURNEY</div>
+    </div>
+    <div class="hidden xl:flex gap-10 text-xl font-bold">
+      <a class="navlink text-blue-500 px-10" href="">Home</a>
+      <a class="navlink text-blue-500 px-10" href="">Explore</a>
+      <a class="navlink text-blue-500 px-10" href="">Hotels</a>
+      <a class="navlink text-blue-500 px-10" href="">Flights</a>
+      <a class="navlink text-blue-500 px-10" href="">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="text-center py-24">
+    <h2 class="text-3xl font-bold text-blue-800">Book domestic and international flights</h2>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="max-w-5xl mx-auto bg-white p-6 rounded-xl shadow-md">
+    <!-- Trip Type -->
+    <div class="flex gap-6 text-blue-500 font-semibold mb-6">
+      <label><input type="radio" name="trip" checked class="mr-1"> One Way</label>
+      <label><input type="radio" name="trip" class="mr-1"> Round Trip</label>
+      <label><input type="radio" name="trip" class="mr-1"> Multi City</label>
+    </div>
+
+    <!-- Editable Form Fields -->
+    <div class="grid md:grid-cols-3 gap-4">
+      <div>
+        <label class="block text-sm text-gray-700 mb-1">From</label>
+        <input type="text" placeholder="Enter Departure City / Airport" class="w-full border rounded px-3 py-2 focus:outline-blue-500" />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700 mb-1">To</label>
+        <input type="text" placeholder="Enter Destination City / Airport" class="w-full border rounded px-3 py-2 focus:outline-blue-500" />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700 mb-1">Departure Date</label>
+        <input type="date" class="w-full border rounded px-3 py-2 focus:outline-blue-500" />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mt-4">
+      <div>
+        <label class="block text-sm text-gray-700 mb-1">Passengers</label>
+        <select class="w-full border rounded px-3 py-2 focus:outline-blue-500">
+          <option>1 Passenger</option>
+          <option>2 Passengers</option>
+          <option>3 Passengers</option>
+          <option>4+ Group</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700 mb-1">I am travelling for</label>
+        <select class="w-full border rounded px-3 py-2 focus:outline-blue-500">
+          <option>Business</option>
+          <option>Leisure</option>
+          <option>Medical</option>
+          <option>Education</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700 mb-1">Pay with</label>
+        <select class="w-full border rounded px-3 py-2 focus:outline-blue-500">
+          <option>Cash</option>
+          <option>UPI</option>
+          <option>Credit/Debit Card</option>
+          <option>Net Banking</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Promo & Button -->
+    <div class="flex justify-between items-center mt-6 flex-wrap gap-4">
+      <button class="text-blue-500 font-semibold underline">+ Add Promo Code</button>
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg">Search Flights</button>
+    </div>
+  </section>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav id="navmobile">
+    <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white shadow-xl xl:hidden z-50">
+      <div class="flex flex-col items-center gap-2 justify-center">
+        <i class="fa-light fa-house text-blue-600 text-2xl"></i>
+        <p class="text-slate-400 myfont text-xs">Home</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 justify-center">
+        <i class="fa-light fa-magnifying-glass text-blue-600 text-2xl"></i>
+        <p class="text-slate-400 myfont text-xs">Explore</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 justify-center">
+        <i class="fa-light fa-bed-front text-blue-600 text-2xl"></i>
+        <p class="text-slate-400 myfont text-xs">Hotels</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 justify-center">
+        <i class="fa-light fa-plane text-blue-600 text-2xl"></i>
+        <p class="text-slate-400 myfont text-xs">Flights</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 justify-center">
+        <i class="fa-light fa-phone text-blue-600 text-2xl"></i>
+        <p class="text-slate-400 myfont text-xs">Contact</p>
+      </div>
+    </div>
+  </nav>
+
+  
+
+</body>
+</html>
+
+<!-----JAVASCRIPT-->
+
+  <!-- Save on your journey section -->
+<section class="max-w-7xl mx-auto px-4 py-12">
+  <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">
+    Save on your journey by exploring these routes with lower fares
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    
+    <!-- Card 1 -->
+    <div class="relative rounded-2xl overflow-hidden shadow-lg">
+      <img src="https://media.istockphoto.com/id/157579910/photo/the-beach.webp?a=1&b=1&s=612x612&w=0&k=20&c=knG0gBV2spG4MOW0I6IY-gRV0aBKKeyyOmVSSeZixGo=" alt="Delhi to Goa" class="w-full h-56 object-cover">
+      <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold text-lg">Delhi to Goa</h3>
+          <p class="text-sm">Flights starting at ₹8,783</p>
+        </div>
+        <div class="bg-white text-blue-500 rounded-full p-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="relative rounded-2xl overflow-hidden shadow-lg">
+      <img src="https://images.unsplash.com/photo-1697532566044-f63e39383085?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRyYXZlbCUyMGRlc3RpbmF0aW9uJTIwZGVsaGklMjB0byUyMG11bWJhaXxlbnwwfHwwfHx8MA%3D%3D" alt="Delhi to Mumbai" class="w-full h-56 object-cover">
+      <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold text-lg">Delhi to Mumbai</h3>
+          <p class="text-sm">Flights starting at ₹9,046</p>
+        </div>
+        <div class="bg-white text-blue-500 rounded-full p-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="relative rounded-2xl overflow-hidden shadow-lg">
+      <img src="https://plus.unsplash.com/premium_photo-1697729465979-f677d9732a18?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dHJhdmVsJTIwZGVzdGluYXRpb24lMjAlMjBtdW1iYWklMjB0byUyMGdvYXxlbnwwfHwwfHx8MA%3D%3D" alt="Mumbai to Goa" class="w-full h-56 object-cover">
+      <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold text-lg">Mumbai to Goa</h3>
+          <p class="text-sm">Flights starting at ₹4,023</p>
+        </div>
+        <div class="bg-white text-blue-500 rounded-full p-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+
+<section class="px-6 py-12 max-w-7xl mx-auto text-gray-800 space-y-12 text-[17px] leading-relaxed">
+</section>
+
+
+
+
+<!-- Emirates Offer Banner -->
+  <section class="max-w-6xl mx-auto mb-16 px-4">
+    <div class="rounded-2xl overflow-hidden shadow-md flex flex-col md:flex-row items-center bg-white">
+      <img src="https://plus.unsplash.com/premium_photo-1661962354730-cda54fa4f9f1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fGFpcmNyYWZ0fGVufDB8fDB8fHww" alt="Emirates" class="w-full md:w-1/2 h-auto object-cover">
+      <div class="p-6">
+        <h3 class="text-xl md:text-2xl font-bold text-blue-900 mb-2"> Emirates Airline with Journey</h3>
+        <p class="text-gray-600 mb-4">Redefine Elegance in the Skies With Our Premium Airline Partner</p>
+        <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded">View Emirates Store</a>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+<!-- Explore Routes Section (Second Row) -->
+  <section class="max-w-6xl mx-auto px-4 mb-16">
+    <h2 class="text-2xl font-bold text-center text-blue-900 mb-8">
+      Discover More Destinations
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="relative overflow-hidden rounded-xl shadow-md">
+        <img src="https://media.istockphoto.com/id/1167975236/photo/the-statue-of-liberty-over-the-scene-of-new-york-cityscape-river-side-which-location-is-lower.webp?a=1&b=1&s=612x612&w=0&k=20&c=YGjmE6DoiytqYUk9CcWXl8bDA3VWGXzxyDT1IB1NUqY=" alt="New York" class="w-full h-56 object-cover">
+        <div class="absolute bottom-0 bg-black bg-opacity-50 w-full text-white p-4">
+          <h3 class="font-bold text-lg">Delhi to New York</h3>
+          <p>Flights starting at ₹45,000</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-xl shadow-md">
+        <img src="https://images.unsplash.com/photo-1546412414-8035e1776c9a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGR1YmFpfGVufDB8fDB8fHww" alt="Dubai" class="w-full h-56 object-cover">
+        <div class="absolute bottom-0 bg-black bg-opacity-50 w-full text-white p-4">
+          <h3 class="font-bold text-lg">Delhi to Dubai</h3>
+          <p>Flights starting at ₹25,000</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-xl shadow-md">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFyaXN8ZW58MHx8MHx8fDA%3D" alt="Paris" class="w-full h-56 object-cover">
+        <div class="absolute bottom-0 bg-black bg-opacity-50 w-full text-white p-4">
+          <h3 class="font-bold text-lg">Delhi to Paris</h3>
+          <p>Flights starting at ₹35,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Explore Other Offerings -->
+  <section class="max-w-6xl mx-auto my-16 px-4">
+    <div class="rounded-2xl p-8 bg-gradient-to-b from-blue-100 to-blue-200 flex items-center justify-between">
+      <div>
+        <p class="text-sm font-semibold text-slate-700 uppercase mb-2">Book</p>
+        <h3 class="text-3xl font-bold text-slate-900">Explore other offerings</h3>
+      </div>
+      <a href="#" class="flex items-center bg-white hover:bg-blue-100 rounded-full px-6 py-3 text-blue-900 font-semibold shadow-inner">
+        Group Booking
+        <span class="ml-3 bg-blue-900 text-white rounded-full w-8 h-8 flex items-center justify-center">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+      </a>
+    </div>
+  </section>
+
+
+
+
+
+<!-- Booking Section: Blue Background, Matching Font and Layout -->
+<section class="bg-blue-50 px-6 py-12 text-gray-800">
+  <div class="max-w-4xl mx-auto text-left leading-relaxed text-[17px]">
+
+    <!-- Booking flights with journey -->
+    <h2 class="text-2xl font-bold font-[cursive] mb-2 text-black">
+      Booking flights with Journey
+    </h2>
+    <p class="mb-4">
+      India’s largest and leading passenger airline – Journey strives to offer the lowest airfare for your flight booking. Over the years, Journey has become synonymous with on-time travel and with every flight ticket you book on the website, we strive to deliver a hassle-free experience to you. With an expanding network and fleet, journey operates to connect you to the people and places you love.
+    </p>
+    <p class="mb-4">
+      Journey currently has flights to over 80+ 
+      <a href="#" class="text-blue-500 underline">domestic destinations</a> in India and 30+ 
+      <a href="#" class="text-blue-500 underline">international destinations</a>. The smaller regions of India are connected with our fleet of ATRs, the larger cities with the A320 CEO, A320 NEO and A321 NEO aircraft, etc and some of the international destinations are operated under codeshare partnerships.
+    </p>
+    <p class="mb-8">
+      So, book directly from our website or mobile app for a personalised experience and get ready to enjoy an array of benefits with IndiGo.
+    </p>
+
+    <!-- 6E Eats Section -->
+    <h2 class="text-2xl font-bold font-[cursive] mb-2 text-black">
+      6E Eats - Add your favourite snack and beverage on your next flight booking
+    </h2>
+    <p class="mb-8">
+      Pre-book your meal from our specially curated menu consisting of journey Classics, 6E choice of the day, and #IndiaByJourney regional favourites. The revamped in-flight food offering sets a new standard for customer experience that ensures quicker on-board service, greater customer engagement, and reduced food wastage.
+    </p>
+
+    <!-- Book affordable tickets -->
+    <h2 class="text-2xl font-bold font-[cursive] mb-2 text-black">
+      Book affordable air tickets with Journey
+    </h2>
+    <p class="mb-2">
+      <strong>6Exclusive:</strong> Save more, travel more with our newly launched 
+      <a href="#" class="text-blue-500 underline">6Exclusive Fare</a>. Get up to 10% off when you book flights on journey's web and app with this fare. The discount is applicable on bookings made at least 3 days prior to the date of travel.
+    </p>
+    <p class="mb-2">
+      Finding cheap flight tickets means using the saved money for a more elaborate holiday with an opportunity to indulge in more local experiences and shopping. Isn’t it? So, it is best that you plan your travel in advance and directly book through 
+      <a href="#" class="text-blue-500 underline">goJourney.in</a>, to enjoy the perks of getting the best deal along with several other benefits.
+    </p>
+    <p class="mb-2">
+      You can also keep a track of the journey airfare calendar, keep an eye on the 
+      <a href="#" class="text-blue-500 underline">offers page</a> on our website and also our social media page for announcements on sale offers. IndiGo offers special fares during its sale period for domestic flights as well as international flights, making it an excellent time to book your flight tickets. In addition, the cashback offers are sure to delight you with additional savings on your airfare.
+    </p>
+    <p>
+      So, any time you plan a travel, book directly from the journey website or mobile app and be delighted with the cheapest airfares.
+    </p>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Booking Info Section: Same Blue Background & Font as Payment Page -->
+<section class="bg-blue-50 px-6 py-12 text-gray-800">
+  <div class="max-w-4xl mx-auto text-left leading-relaxed text-[17px]">
+
+    <!-- How to Book -->
+    <h2 class="text-2xl font-bold font-[cursive] mb-2 text-black">
+      How can you book journey flight tickets?
+    </h2>
+
+    <p class="font-bold text-gray-700 mb-2">
+      Here are easy steps to book Journey flight tickets.
+    </p>
+
+    <ol class="list-decimal list-inside text-gray-700 space-y-1">
+      <li>
+        First, go to the 
+        <a href="#" class="text-blue-500 underline">goJourney.in</a> website or open the journey mobile app.
+      </li>
+      <li>Then, visit the booking page and enter the ‘to’ and ‘from’ destinations.</li>
+      <li>Choose the date of travel and number of passengers.</li>
+      <li>
+        In case you are eligible for a special fare, please select from – 6Exclusive, Armed Forces, Student, Senior Citizen, 
+        LTC, Family & Friends and Unaccompanied Minor.
+      </li>
+      <li>
+        Click on the ‘Search Flight’ button to receive a list of options along with the flight ticket prices. 
+        Choose the flight as per your preference.
+      </li>
+      <li>
+        Confirm your booking after entering all the required details and get ready to enjoy on-time, hassle-free and 
+        courteous service on board.
+      </li>
+    </ol>
+
+    <p class="italic text-sm mt-3 text-gray-600">
+      <span class="font-semibold">Note:</span> While making the payment for your flight tickets, do check out the 
+      various cashback and other deals available on the 
+      <a href="#" class="text-blue-500 underline">offers page</a>. This will enable you to enjoy additional savings on your booking.
+    </p>
+
+    <!-- Divider -->
+    <div class="my-10 border-b border-gray-300"></div>
+
+    <!-- Advantages -->
+    <h2 class="text-2xl font-bold font-[cursive] mb-2 text-black">
+      What are the advantages of booking flights with Journey
+    </h2>
+
+    <p class="mb-2">
+      Offering cheap flights to a slew of domestic and international destinations, journey aims at connecting different 
+      destinations by offering over 2000 flights every day. At journey, we prioritize the comfort of our customers above 
+      everything else. In accordance with the same, we at Journey  multiple additional benefits on direct booking 
+      along with hassle-free and courteous airport and 
+      <a href="#" class="text-blue-500 underline">in-flight services</a>.
+    </p>
+
+    <p class="font-bold mb-2 text-gray-800">
+      Listed below are some of the benefits of booking air tickets with Journey:
+    </p>
+
+    <ol class="list-decimal list-inside space-y-1 text-gray-700">
+      <li>journey the lowest flight booking fees, EMI options, and many other booking perks.</li>
+      <li>With Journey, you can cancel your flight tickets at lower fee.</li>
+      <li>
+        Passengers can choose from different types of fare such as Saver, Flexi Plus, Super 6E Fares and others for additional savings.
+      </li>
+      <li>
+        Get additional discounts when you book with categories such as Unaccompanied Minor, Armed Forces, Students, LTC.
+      </li>
+      <li>Offers multiple payment options to choose from, such as UPI, NetBanking, etc.</li>
+      <li>6E Eats and onboard has to be on-board.</li>
+      <li>Opt for Seat Select and choose a preferable window seat or extra legroom at the time of booking.</li>
+      <li>
+        Journey provides a Delayed & Lost Baggage Protection add-on at the time of booking, which assures compensation 
+        in the event your check-in bags are delayed, lost, or damaged due to any unforeseen circumstance.
+      </li>
+      <li>
+        In addition, journey also offers an array of add-ons such as 6E Prime, Fast Forward, Lounge Services etc.
+      </li>
+      <li>
+        With our AI-powered chat assistant, 6E skai you can sort all of your booking queries. You can also get 
+        booking-related notifications and answers to your queries on your favourite messaging app, WhatsApp.
+      </li>
+    </ol>
+
+    <!-- Divider -->
+    <div class="my-10 border-b border-gray-300"></div>
+
+    <!-- Domestic/International Flights -->
+    <h2 class="text-2xl font-bold font-[cursive] mb-2 text-black">
+      Journey flights to domestic and International destinations
+    </h2>
+
+    <p>
+      India's coolest and largest passenger airline, Journey dominates the country’s 
+      <a href="#" class="text-blue-500 underline">domestic flights</a> space as a low-cost carrier. Journey has its reach 
+      over 80+ destinations across India with its direct and connecting flights. journey  strives to improve domestic 
+      connectivity in every possible way regardless of where you choose to visit within India, whether it is in the 
+      buzzing metropolises like Delhi, Kolkata, Mumbai, or the tier-II cities like Kadapa, Darbhanga, and others.
+    </p>
+
+    <p class="mt-2">
+      Your travel options are not only limited to domestic sectors but also international ones. With 
+      <a href="#" class="text-blue-500 underline">affordable international fares</a>, Journey will be happy to fly you 
+      first to your first International destination with its convenient direct and connecting flights from key destinations 
+      in India and abroad. journey currently operates to over 30+ international destinations.
+    </p>
+
+  </div>
+</section>
+
+
+
+
+<!-- Flight Footer Section with Blue Background -->
+<section class="bg-blue-200 py-10 px-4 text-white">
+  <div class="max-w-7xl mx-auto space-y-8">
+
+    <!-- Popular Domestic Flight Routes -->
+    <div>
+      <h3 class="font-semibold mb-3 text-black">Popular Domestic Flight Routes</h3>
+      <p class="flex flex-wrap gap-2 text-sm">
+      <a href="#" class="hover:underline text-black">Delhi Mumbai flights</a>
+        <a href="#" class="hover:underline text-black">Mumbai Delhi flights</a>
+        <a href="#" class="hover:underline text-black">Banglore Delhi flights</a>
+        <a href="#" class="hover:underline text-black">Delhi Goa flights</a>
+        <a href="#" class="hover:underline text-black">Mumbai Goa flights</a>
+        <a href="#" class="hover:underline text-black">Delhi Pune flights</a>
+        <a href="#" class="hover:underline text-black"> Ahmedabad Delhi flights</a> 
+        <a href="#" class="hover:underline text-black">Chennai Delhi flights</a>
+      </p>
+  
+
+
+      </p>
+    </div>
+
+    <!-- Popular International Flight Routes -->
+    <div>
+      <h3 class="font-semibold mb-3 text-black">Popular International Flight Routes</h3>
+      <p class="flex flex-wrap gap-2 text-sm">
+        <a href="#" class="hover:underline text-black">Delhi Dubai flights</a>
+        <a href="#" class="hover:underline text-black">Dubai Delhi flights</a>
+        <a href="#" class="hover:underline text-black">Mumbai Dubai flights</a>
+        <a href="#" class="hover:underline text-black">Delhi Singapore flights</a>
+        <a href="#" class="hover:underline text-black">Delhi London flights</a>
+        <a href="#" class="hover:underline text-black">Bangkok Delhi flights</a>
+        <a href="#" class="hover:underline text-black">Delhi Paris flights</a>
+      </p>
+    </div>
+
+    <!-- Popular Domestic Destinations -->
+    <div>
+      <h3 clas="font-semibold mb-3 text-black">Popular Domestic Destinations</h3>
+      <p class="flex flex-wrap gap-2 text-sm">
+        <a href="#" class="hover:underline text-black">Ayodhya</a>
+        <a href="#" class="hover:underline text-black">Delhi</a>
+        <a href="#" class="hover:underline text-black">Agra</a>
+        <a href="#" class="hover:underline text-black">Goa</a>
+        <a href="#" class="hover:underline text-black">Hyderabad</a>
+        <a href="#" class="hover:underline text-black">Kolkata</a>
+        <a href="#" class="hover:underline text-black">Pune</a>
+        <a href="#" class="hover:underline text-black">Mumbai</a>
+        <a href="#" class="hover:underline text-black">Srinagar</a>
+      </p>
+    </div>
+
+    <!-- Popular International Destinations -->
+    <div>
+      <h3 class="font-semibold mb-3 text-black">Popular International Destinations</h3>
+      <p class="flex flex-wrap gap-2 text-sm">
+        <a href="#" class="hover:underline text-black">Singapore</a>
+        <a href="#" class="hover:underline text-black">Dubai</a>
+        <a href="#" class="hover:underline text-black">London</a>
+        <a href="#" class="hover:underline text-black">Bangkok</a>
+        <a href="#" class="hover:underline text-black">Istanbul</a>
+        <a href="#" class="hover:underline text-black">Kathmandu</a>
+        <a href="#" class="hover:underline text-black">Colombo</a>
+      </p>
+    </div>
+
+    <!-- Important Links -->
+    <div>
+      <h3 class="font-semibold mb-3 text-black">Important Links</h3>
+      <p class="flex flex-wrap gap-3 text-sm">
+        <a href="#" class="hover:underline text-black">Cheap flights</a>
+        <a href="#" class="hover:underline text-black">Domestic flights</a>
+        <a href="#" class="hover:underline text-black">International flights</a>
+        <a href="#" class="hover:underline text-black">Flight status</a>
+        <a href="#" class="hover:underline text-black">Web check-in</a>
+        <a href="#" class="hover:underline text-black">Visa information</a>
+        <a href="#" class="hover:underline text-black">Airport directory</a>
+        <a href="#" class="hover:underline text-black">Hotels</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+<section class="bg-blue-200 text-white py-10 px-4">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
+
+    <!-- Main Stat Card -->
+    <div class="bg-white text-blue-500 p-6 rounded-2xl shadow-lg flex flex-col justify-between min-h-[200px] col-span-1 md:col-span-1 lg:col-span-1">
+      <div class="text-3xl font-bold">2,200+</div>
+      <div class="text-lg font-medium mt-2">Daily Flights</div>
+      <div class="mt-4">
+        <div class="bg-blue-500 text-white w-10 h-10 flex items-center justify-center rounded-full">
+          ✈️
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Info Cards -->
+    <div class="bg-white text-blue-500 p-6 rounded-2xl shadow-md min-h-[100px] flex flex-col justify-center">
+      <div class="text-2xl font-bold">90+</div>
+      <div class="text-sm mt-1">Domestic Destinations</div>
+    </div>
+
+    <div class="bg-white text-blue-500 p-6 rounded-2xl shadow-md min-h-[100px] flex flex-col justify-center">
+      <div class="text-2xl font-bold">40</div>
+      <div class="text-sm mt-1">International Destinations</div>
+    </div>
+
+    <div class="bg-white text-blue-500 p-6 rounded-2xl shadow-md min-h-[100px] flex flex-col justify-center">
+      <div class="text-2xl font-bold">750 Mn+</div>
+      <div class="text-sm mt-1">Happy Customers</div>
+    </div>
+
+    <div class="bg-white text-blue-500 p-6 rounded-2xl shadow-md min-h-[100px] flex flex-col justify-center">
+      <div class="text-2xl font-bold">400+</div>
+      <div class="text-sm mt-1">Fleet Strong</div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+    <section id="footer">
+        <footer class="bg-blue-200 py-10 px-6 myfont w-full font-semibold">
+            <div class="w-full sm:flex justify-evenly sm:justify-ccenter">
+                <div>
+                    <div class="flex items-center h-auto">
+                        <img width="50px" height="auto" src="/media/logo.png" alt="">
+                        <h3 class="text-2xl font-bold ps-3">JOURNEY</h3>
+                    </div>
+                    <p class="text-m">Your trusted partner in travel – explore the world with ease and
+                        confidence.</p>
+                </div>
+                <div class="flex justify-between lg:justify-center mt-5 lg:gap-20">
+                    <div>
+                        <h4 class="font-semibold mb-3">Company</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class=" ps-5">
+                        <h4 class="font-semibold mb-3 text-black">Support</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4 text-xl">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-10 text-center text-gray-500 text-sm font-semibold lg:mb-0 mb-20">
+                © 2025 Journey. All rights reserved.
+            </div>
+        </footer>
+    </section>
+
+ 
+
+
+</body>
+</html>
