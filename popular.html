@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel-Booking</title>
+    <!-- Removed external stylesheet link as CSS is now embedded -->
+    <link rel="shortcut icon" href="favicon.icon" type="image/x-xicon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <!-- Google Fonts: Inter and Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <script src="https://kit.fontawesome.com/8cc8bfb38e.js" crossorigin="anonymous"></script>
+    <style>
+        /* CSS from your style.css file, embedded directly */
+        body {
+            font-family: "Poiret One", sans-serif;
+
+        }
+
+        .poiret-one-regular {
+            font-family: "Poiret One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+      
+        #form1{
+            margin-left: 55px;
+        }
+
+        #h1 {
+            font-size: 50px;
+            font-weight: 600;
+            text-align: center;
+            color: rgb(5, 49, 171);
+        }
+
+
+
+        .star-filled {
+            color: #FFD700;
+            /* Gold color */
+        }
+
+        .star-empty {
+            color: #d1d5db;
+            /* Gray-300 */
+        }
+
+        /* Custom styling for the green checkmark/star badge */
+        .rating-badge {
+            background-color: #ECFDF5;
+            /* Light green for background (similar to green-50) */
+            border-radius: 9999px;
+            /* Fully rounded */
+            padding: 0.25rem 0.75rem;
+            /* py-1 px-3 */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            /* Space between icon and text */
+            font-size: 0.875rem;
+            /* text-sm */
+            font-weight: 600;
+            /* font-semibold */
+            color: #047857;
+            /* Dark green text (similar to green-700) */
+            white-space: nowrap;
+            /* Prevent badge text from wrapping */
+        }
+
+        #head {
+            height: 300px;
+            background-image: url('https://img.freepik.com/free-vector/educational-tourism-abstract-concept-vector-illustration-international-edu-tourism-education-abroad-entertaining-studying-exchange-student-vacation-group-airport-abstract-metaphor_335657-5894.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&w=740');
+        }
+
+        /* Custom styling for the BluChips button */
+        .bluchips-btn {
+            background-color: #E0F2FE;
+            /* Light blue (similar to blue-100) */
+            color: #1E40AF;
+            /* Darker blue (similar to blue-800) */
+            padding: 0.35rem 0.75rem;
+            /* Slightly smaller padding for compact card */
+            border-radius: 9999px;
+            /* Fully rounded */
+            font-size: 0.75rem;
+            /* text-xs for compact card */
+            font-weight: 600;
+            /* font-semibold */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+            /* Prevent button text from wrapping */
+        }
+
+        .bluchips-btn:hover {
+            background-color: #BFDBFE;
+            /* Slightly darker blue on hover */
+        }
+
+
+        .marquee-open-sans {
+            font-family: "Poiret One", sans-serif;
+            /* Apply Open Sans */
+            font-size: 1.125rem;
+            /* Equivalent to Tailwind text-lg */
+            font-weight: 600;
+            /* Equivalent to Tailwind font-semibold */
+            color: #2563EB;
+            /* Equivalent to Tailwind text-blue-600 */
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50">
+
+    <!-- Navbar -->
+    <nav
+        class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-white transition-colors duration-300 ease-in-out px-6 py-3 myfont">
+        <div class="flex items-center gap-4 ps-5">
+            <img class="h-12 navlink" src="./Media/logo.jpg" alt="Logo">
+            <div class="text-blue-500 text-2xl md:text-3xl font-black navlink">JOURNEY</div>
+        </div>
+        <div class="hidden xl:flex gap-10 text-xl font-bold">
+            <a class="navlink text-blue-500 px-10" href="">Home</a>
+            <a class="navlink text-blue-500 px-10" href="">Explore</a>
+            <a class="navlink text-blue-500 px-10" href="hotel.html">Hotels</a>
+            <a class="navlink text-blue-500 px-10" href="">Flights</a>
+            <a class="navlink text-blue-500 px-10" href="">Contact</a>
+        </div>
+    </nav>
+
+    <nav id="navmobile">
+        <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden">
+            <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-house text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Home</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-magnifying-glass text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Explore</p>
+            </a>
+            <a href="hotel.html" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-bed-front text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Hotels</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-plane text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Flights</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-phone text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Contact</p>
+            </a>
+        </div>
+    </nav>
+
+     <!-- Form -->
+    <section class="container mx-auto px-4 py-10 mt-12 " id="form">
+        <div class="bg-white p-6 rounded-lg border border-sky-300 shadow-lg w-full max-w-5xl font-semibold mx-auto">
+            <form class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+                <!-- Destination Input -->
+                <div class="flex flex-col">
+                    <label for="destination"
+                        class="text-gray-700 text-left text-sm font-semibold mb-1">Destination</label>
+                    <input type="text" id="destination" list="destinations" placeholder="Enter city or hotel"
+                        class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <datalist id="destinations">
+                        <option value="New York"></option>
+                        <option value="Paris"></option>
+                        <option value="London"></option>
+                        <option value="Dubai"></option>
+                        <option value="Tokyo"></option>
+                        <option value="Maldives"></option>
+                        <option value="Kochi"></option>
+                    </datalist>
+                </div>
+                <!-- Check-in Date Input -->
+                <div class="flex flex-col">
+                    <label for="checkin" class="text-gray-700 text-left font-semibold  text-sm font-medium mb-1">Check-in & Check-out
+                        Date</label>
+                    <input type="text" id="checkin" placeholder="18 June to 20 June"
+                        class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <!-- Number of Guests Input -->
+                <div class="flex flex-col">
+                    <label for="guests" class="text-gray-700 text-left text-sm font-semibold font-medium mb-1">Guests</label>
+                    <input type="number" id="guests" placeholder="2 Adults" min="1"
+                        class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="flex flex-col">
+                    <button type="submit"
+                        class="bg-blue-500 text-white p-3 rounded-md font-bold font-semibold hover:bg-indigo-600 transition duration-300"
+                        style="margin-top: 23px;">Search
+                        Hotels</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="container flex justify-start ml-8" id="form1">
+
+        <form class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <a href="popular.html">
+                <button type="button"
+                    class="w-32 bg-sky-300 text-black p-2 rounded-lg font-bold hover:bg-sky-500 hover:text-white transition duration-300">
+                    Popular
+                </button>
+            </a>
+
+            <a href="low-high.html">
+                <button type="button"
+                    class="w-auto bg-white text-black p-2 rounded-lg font-bold hover:bg-sky-500 hover:text-white transition duration-300">
+                    Price - Low to High
+                </button>
+            </a>
+
+            <a href="high-low.html">
+                <button type="button"
+                    class="w-auto bg-white text-black p-2 rounded-lg font-bold hover:bg-sky-500 hover:text-white transition duration-300">
+                    Price - High to Low
+                </button>
+            </a>
+        </form>
+    </section>
+
+    <!-- Hotel info -->
+    <section class="container px-4 py-8">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            <!-- Hotel Listing Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://images.pexels.com/photos/18801079/pexels-photo-18801079/free-photo-of-couch-and-double-bed-in-hotel-suite.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Hotel Adone</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹4,999</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Hotel Listing Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/room-interior-hotel-bedroom_23-2150683419.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Residence Retreat</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.0/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5"> Alappuzha, Kerala | 1.5 km from Kuttanad</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹2,999</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/view-luxurious-hotel-interior-space_23-2150683457.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Sunset Serenity</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-black-500">₹2,123</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/premium-photo/hotel-lobby-with-chandelier-chandelier_1298691-26819.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Tidal Tranquility</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹4,500</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/premium-photo/opulent-luxury-bedroom-interior-4k-resolution-set-amidst-affluent-ambiance_1189966-2070.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Chic Retreat</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹2,850</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/premium-photo/chic-cozy-modern-living-room-with-lilac-grey-sofas_1229707-1783.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Elite Executive Inn</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹3,500</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 7 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/premium-photo/luxurious-interior-very-expensive-rich-water-villa-maldives-decorated-with-natural-wood_267786-1945.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Embersprings Resort</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹2,500</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 8 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/hotel-lobby_23-2149397559.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Historic Homestead</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹1,800</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 9 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/3d-rendering-modern-luxury-hotel-office-reception-meeting-lounge_105762-2045.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Luxuriouslodge Retreats</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹2,200</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 10 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/luxury-architecture-exterior-design_23-2151920954.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Majestic Manor</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹4,300</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 11-->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/3d-rendering-seminar-meeting-banquet-hall-room_105762-1773.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Hotel Paradise</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹2,999</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 12 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/royal-dining-room-with-wooden-furniture-chandeliers_114579-2222.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Imperial</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹5,000</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 13 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/free-photo/indoor-pool-luxurious-mansion_23-2151961795.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Historic Homestead</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹3,900</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Listing Card 15 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200">
+                <div class="w-2/5 flex-shrink-0">
+                    <img src="https://img.freepik.com/premium-photo/evening-ambiance-modern-lounge-features-flowing-fabric-installations-soft-lighting_890077-12749.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                        alt="Hotel Room" class=" h-full object-cover">
+                </div>
+                <div class="w-full sm:w-2/3 p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h2 class="text-lg font-bold text-gray-900 leading-tight">Tidal Tranquility</h2>
+                            <div class="rating-badge flex-shrink-0 ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 flex items-center">
+                            Hotel
+                            <span class="ml-1 flex items-center">
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-filled" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                                <svg class="h-3 w-3 star-empty" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279L.001 9.306l8.332-1.151L12 .587z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">Paris, France | 1.5 km from Eiffel Tower</p>
+                    </div>
+                    <div class="text-gray-700 text-sm mt-3 mb-4">
+                        <p class="font-semibold">Charming stay with picturesque river views.</p>
+                    </div>
+                    <img class="sm:w-1/2" src="./Media/View All.png" alt="">
+                    <div class="flex justify-end mt-2">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-end mt-auto">
+                        <div class="text-right mb-1">
+                            <span class="text-xl font-bold text-gray-900">₹2,900</span>
+                            <span class="text-xs text-gray-600">/night</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Inclusive of Taxes & Fees</p>
+                        <button class="bluchips-btn">
+                            <span>500/- cashback on Paytm + other offers</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Page number -->
+            <div class="flex items-center space-x-1 mx-auto">
+                <a href="#"
+                    class="pagination-link active px-4 py-2 text-sm font-medium border border-gray-300 rounded-lg">1</a>
+                <a href="#"
+                    class="pagination-link px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg">2</a>
+                <a href="#"
+                    class="pagination-link px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg">3</a>
+                <span class="px-4 py-2 text-sm font-medium text-gray-500">...</span>
+                <a href="#"
+                    class="pagination-link px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg">10</a>
+            </div>
+
+        </div>
+    </section>
+
+
+        <!-- Footer Section -->
+    <section id="footer">
+        <footer class="bg-sky-200 py-10 px-6 myfont w-full font-semibold">
+            <div class="w-full sm:flex justify-evenly sm:justify-ccenter">
+                <div>
+                    <div class="flex items-center h-auto">
+                        <img width="50px" height="auto" src="./Media/logo.jpg" alt="">
+                        <h3 class="text-2xl font-bold ps-3">JOURNEY</h3>
+                    </div>
+                    <p class="text-m">Your trusted partner in travel – explore the world with ease and
+                        confidence.</p>
+                </div>
+                <div class="flex justify-between lg:justify-center mt-5 lg:gap-20">
+                    <div>
+                        <h4 class="font-semibold mb-3">Company</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class=" ps-5">
+                        <h4 class="font-semibold mb-3 text-black">Support</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4 text-xl">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-10 text-center text-gray-500 text-sm font-semibold lg:mb-0 mb-20">
+                © 2025 Journey. All rights reserved.
+            </div>
+        </footer>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>

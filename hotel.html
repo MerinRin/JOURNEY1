@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel-Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.icon" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <script src="https://kit.fontawesome.com/8cc8bfb38e.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-to-b from-blue-100 to-white">
+   
+    <!-- <div class="overflow-hidden whitespace-nowrap bg-white">
+        <div class="animate-marquee inline-block">
+            <span class="mx-4 text-lg font-semibold text-black-600">
+                🌍 Discover top-rated hotels with exclusive deals! <a href="">Click here</a>
+            </span>
+            <span class="mx-4 text-lg font-semibold text-black-600">
+                🔥 Flash Sale: Tonight Only - 60% Off!
+            </span>
+            <span class="mx-4 text-lg font-semibold text-black-600">
+                🏖️ Free Airport Pickup on All Premium Bookings!
+            </span>
+        </div>
+    </div> -->
+
+    <!-- Navbar -->
+    <nav
+        class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-white transition-colors duration-300 ease-in-out px-6 py-3 myfont">
+        <div class="flex items-center gap-4 ps-5">
+            <img class="h-12 navlink" src="./Media/logo.jpg" alt="Logo">
+            <div class="text-blue-500 text-2xl md:text-3xl font-black navlink">JOURNEY</div>
+        </div>
+        <div class="hidden xl:flex gap-10 text-xl font-bold">
+            <a class="navlink text-blue-500 px-10" href="">Home</a>
+            <a class="navlink text-blue-500 px-10" href="">Explore</a>
+            <a class="navlink text-blue-500 px-10" href="hotel.html">Hotels</a>
+            <a class="navlink text-blue-500 px-10" href="">Flights</a>
+            <a class="navlink text-blue-500 px-10" href="">Contact</a>
+        </div>
+    </nav>
+
+    <nav id="navmobile">
+        <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden">
+            <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-house text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Home</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-magnifying-glass text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Explore</p>
+            </a>
+            <a href="hotel.html" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-bed-front text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Hotels</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-plane text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Flights</p>
+            </a>
+            <a href="" class="flex flex-col items-center gap-2 justify-center">
+                <i class="fa-light fa-phone text-blue-600 text-2xl"></i>
+                <p class="text-slate-400 myfont text-xs">Contact</p>
+            </a>
+        </div>
+    </nav>
+
+    <h1 id="h1" class="text-blue-500 mt-20">Book Hotels</h1>
+    <section class="container mx-auto px-4 py-12" id="form">
+        <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-6xl mx-auto">
+            <form class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <!-- Search Button - moved to top and spans all columns -->
+
+
+                <!-- Destination Input -->
+                <div class="flex flex-col">
+                    <label for="destination"
+                        class="text-gray-700 text-left text-sm font-medium mb-1">Destination</label>
+                    <input type="text" id="destination" list="destinations" placeholder="Enter city or hotel"
+                        class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <datalist id="destinations">
+                        <option value="New York"></option>
+                        <option value="Paris"></option>
+                        <option value="London"></option>
+                        <option value="Dubai"></option>
+                        <option value="Tokyo"></option>
+                        <option value="Maldives"></option>
+                        <option value="Kochi"></option>
+                    </datalist>
+                </div>
+                <!-- Check-in Date Input -->
+                <div class="flex flex-col">
+                    <label for="checkin" class="text-gray-700 text-left text-sm font-medium mb-1">Check-in Date</label>
+                    <input type="date" id="checkin"
+                        class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <!-- Check-out Date Input -->
+                <div class="flex flex-col">
+                    <label for="checkout" class="text-gray-700 text-left text-sm font-medium mb-1">Check-out
+                        Date</label>
+                    <input type="date" id="checkout"
+                        class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <!-- Number of Guests Input -->
+                <div class="flex flex-col">
+                    <label for="guests" class="text-gray-700 text-left text-sm font-medium mb-1">Guests</label>
+                    <input type="number" id="guests" placeholder="No. of guests" min="1"
+                        class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <a href="countryroom.html">
+                    <div class="flex flex-col">
+                        <button type="button"
+                            class="bg-indigo-500 text-white p-3 rounded-md font-bold hover:bg-indigo-600 transition duration-300"
+                            style="margin-top: 23px;">Search
+                            Hotels</button>
+                    </div>
+                </a>
+
+            </form>
+        </div>
+    </section>
+
+    <section class="relative " id="carousel">
+
+        <!-- Changed w-full to max-w-5xl and added mx-auto for centering -->
+        <div id="default-carousel" class="relative max-w-5xl mx-auto " data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-64 overflow-hidden md:h-[300px] lg:h-[400px] rounded-lg ">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <!-- Using standard placeholder images for better display in Canvas -->
+                    <img src="./Media/1.png"
+                        class="absolute block w-full h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        alt="Luxury Resort Image">
+                    <div class="carousel-text-overlay">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4">Find Your Perfect Stay</h2>
+                        <p class="text-lg md:text-2xl mb-8">Explore countless hotel options worldwide.</p>
+                        <!-- Form content removed as it's outside this section now -->
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./Media/3.png"
+                        class="absolute block w-full h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        alt="Beachfront Paradise Image">
+                    <div class="carousel-text-overlay">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4">Dream Vacations Await</h2>
+                        <p class="text-lg md:text-2xl mb-8">Secluded resorts and vibrant city escapes.</p>
+                        <!-- Form content removed as it's outside this section now -->
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./Media/2.png"
+                        class="absolute block w-full h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        alt="Mountain Retreat Image">
+                    <div class="carousel-text-overlay">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4">Unforgettable Experiences</h2>
+                        <p class="text-lg md:text-2xl mb-8">From cozy cabins to grand city hotels.</p>
+                        <!-- Form content removed as it's outside this section now -->
+                    </div>
+                </div>
+            </div>
+            <!-- Removed Slider indicators and Slider controls -->
+        </div>
+    </section>
+
+
+
+    <section class="py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-500 mb-10">Discover Hotels for Every Kind of Journey
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Beach -->
+                <div class="bg-blue-50 rounded-xl shadow-lg overflow-hidden">
+                    <video class="w-full h-40 object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
+                        <source src="./Media/8042504-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-700">Beachside Bliss</h3>
+                        <p class="text-gray-600 text-sm">Stay steps away from the shore with ocean views and breezy
+                            balconies</p>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="bg-blue-50 rounded-xl shadow-lg overflow-hidden">
+                    <video class="w-full h-40 object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
+                        <source src="./Media/history.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-700">Historic Stays</h3>
+                        <p class="text-gray-600 text-sm">Experience charming heritage hotels near iconic landmarks.</p>
+                    </div>
+                </div>
+
+                <!-- Culture -->
+                <div class="bg-blue-50 rounded-xl shadow-lg overflow-hidden">
+                    <video class="w-full h-40 object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
+                        <source src="./Media/culture.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-700">Cultural Comforts</h3>
+                        <p class="text-gray-600 text-sm">Immerse yourself in local design, cuisine, and traditions
+                            within our curated stays.</p>
+                    </div>
+                </div>
+
+                <!-- Adventure -->
+                <div class="bg-blue-50 rounded-xl shadow-lg overflow-hidden">
+                    <video class="w-full h-40 object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
+                        <source src="./Media/adventure.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-700">Adventure-Ready Retreats</h3>
+                        <p class="text-gray-600 text-sm">Perfect base camps for hiking, water sports, and thrilling
+                            excursions.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-white rounded-xl scrollbar-hide">
+        <div class="container mx-auto p-6 ">
+            <h2 class="text-xl font-bold text-blue-500 mb-4">
+                Adventure Season: Take 35% Off with <span class="text-blue-900 font-bold">OUTDOORS35</span>
+            </h2>
+
+            <div class="overflow-x-auto flex space-x-4 carousel pb-4 scrollbar-hide">
+                <!-- Card 1 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/2064827/pexels-photo-2064827.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="London" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Italy</h3>
+                            <p class="text-sm text-gray-600">historical cities, world-renowned cuisine</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/1796715/pexels-photo-1796715.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="london" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">London</h3>
+                            <p class="text-sm text-gray-600">Iconic Sights, World-Class Museums, Delicious food.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/3214995/pexels-photo-3214995.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Dubai, UAE</h3>
+                            <p class="text-sm text-gray-600">Discover Dubai: Where Adventure Meets Luxury</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Madrid</h3>
+                            <p class="text-sm text-gray-600">Rich History, Lively Nightlife, Backwaters</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/3185493/pexels-photo-3185493.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Paris" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Turkey </h3>
+                            <p class="text-sm text-gray-600"> A Land of Culture with Modern Twist, Bunch of cats</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://media.istockphoto.com/id/1197899961/photo/kuala-lumpur-skyline-daytime-wide-angle-aerial-view-featuring-petronas-towers.jpg?b=1&s=612x612&w=0&k=20&c=IQ2B6-059ubbyrloNtTjTzj8na_-Eu5FffOBkb41WAg="
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Malaysia</h3>
+                            <p class="text-sm text-gray-600">blend of diverse wildlife, magnanimous mountains,
+                                rainforests,
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/2426546/pexels-photo-2426546.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Singapore</h3>
+                            <p class="text-sm text-gray-600"> The Quintessential Cosmopolitan, Unique buildings.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="container mx-auto p-6 scrollbar-hide">
+            <h2 class="text-xl font-bold text-blue-500 mb-4">
+                Discover Stays Across Incredible <span class="text-blue-700 font-bold">INDIA</span>
+            </h2>
+
+            <div class="overflow-x-auto flex space-x-4 carousel pb-4 scrollbar-hide">
+                <!-- Card 1 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/5499902/pexels-photo-5499902.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="London" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Agra, Uttar Pradesh</h3>
+                            <p class="text-sm text-gray-600">Best city for lovebugs</p>
+                        </div>
+                    </div>
+                </a>`
+
+                <!-- Card 2 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/1542620/pexels-photo-1542620.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="london" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Delhi</h3>
+                            <p class="text-sm text-gray-600">Best for history and architecture buffs</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://media.istockphoto.com/id/1157048446/photo/aerial-shot-of-the-beach-from-above-showing-sea-beach-mountain-and-a-coconut-plantation-goa.jpg?b=1&s=612x612&w=0&k=20&c=whMcj02iU6qBKt3lA9SrLfwQTKreXm7MH-MO1aoOoak="
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Goa</h3>
+                            <p class="text-sm text-gray-600">Best for relaxation</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/15395061/pexels-photo-15395061/free-photo-of-hawa-mahal-palace-in-jaipur-india.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Jaisalmer, Rajasthan</h3>
+                            <p class="text-sm text-gray-600">Best for desert romance</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/31758870/pexels-photo-31758870/free-photo-of-lush-green-tea-plantations-in-munnar-india.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                            alt="Paris" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Kerala</h3>
+                            <p class="text-sm text-gray-600"> Best for backwaters and beaches</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/5201435/pexels-photo-5201435.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Leh, Ladakh</h3>
+                            <p class="text-sm text-gray-600">Best for a taste of the mountain life</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="countryroom.html">
+                    <div class="carousel-item w-64 bg-sky-100 rounded-xl shadow-lg overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/10410759/pexels-photo-10410759.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Madrid" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Meghalaya</h3>
+                            <p class="text-sm text-gray-600"> Best for natural beauty
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deals for Today Section - More Professional Look -->
+    <section class="deals-section-bg py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+
+            <h2 class="text-3xl font-bold text-center text-blue-500 mb-12">Limited-Time Hotel Stay Offers for the
+                Weekend</h2>
+
+            <p class="text-lg text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+                Discover unbeatable deals on premium hotel stays. Book now and make your weekend unforgettable.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Hotel Deal 1 -->
+                <a href="popular.html">
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-100 hover:shadow-xl border border-gray-100 relative">
+                        <span class="offer-badge">FLASH DEAL</span>
+                        <img src="https://img.freepik.com/premium-photo/rooftop-pool-showcasing-panoramic-city-views-with-chic-seating-infinity-edge_1230681-17317.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                            alt="Grand City Hotel" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-l font-semibold text-gray-800 mb-2">Urban Luxury Stay at Grand City Hotel
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">Stay in the heart of the city with premium rooms and
+                                top-rated amenities.</p>
+                            <ul class="text-gray-700 text-sm list-disc list-inside mb-4 space-y-1">
+                                <li>Complimentary breakfast</li>
+                                <li>Late check-out</li>
+                                <li>Access to fitness center</li>
+                            </ul>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-2xl font-bold text-yellow-600">30% OFF</span>
+                                    <span class="text-gray-500 line-through text-sm ml-2">₹8,500</span>
+                                </div>
+                                <span class="deal-tag">Expires: 24h</span>
+                            </div>
+                            <button
+                                class="w-full bg-blue-500 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Hotel Deal 2 -->
+                <a href="low-high.html">
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-100 hover:shadow-xl border border-gray-100 relative">
+                        <span class="offer-badge">LIMITED OFFER</span>
+                        <img src="https://img.freepik.com/premium-photo/beach-scene-with-lounge-chairs-large-pool-with-large-number-palm-trees-backgroun_994023-103194.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                            alt="Serene Shores Resort" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-l font-semibold text-gray-800 mb-2">Seaside Stay at Serene Shores Resort
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">Unwind by the ocean with deluxe rooms and spa access.
+                            </p>
+                            <ul class="text-gray-700 text-sm list-disc list-inside mb-4 space-y-1">
+                                <li>Private beach access</li>
+                                <li>Spa discounts</li>
+                                <li>Welcome drink</li>
+                            </ul>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-2xl font-bold text-yellow-600">25% OFF</span>
+                                    <span class="text-gray-500 line-through text-sm ml-2">₹12,000</span>
+                                </div>
+                                <span class="deal-tag">Expires: 48h</span>
+                            </div>
+                            <button
+                                class="w-full bg-blue-500 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Hotel Deal 3 -->
+                <a href="low-high.html">
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-100 hover:shadow-xl border border-gray-100 relative">
+                        <span class="offer-badge">HOT DEAL</span>
+                        <img src="https://img.freepik.com/free-photo/view-tank-container-water-storage_23-2151748306.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                            alt="Hillview Heights Hotel" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-l font-semibold text-gray-800 mb-2">Mountain Escape at Hillview Heights</h3>
+                            <p class="text-gray-600 text-sm mb-4">Breathtaking mountain views with cozy comfort and
+                                fire-lit
+                                nights.</p>
+                            <ul class="text-gray-700 text-sm list-disc list-inside mb-4 space-y-1">
+                                <li>Guided hiking tours</li>
+                                <li>Room with fireplace</li>
+                                <li>Hot tub access</li>
+                            </ul>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-2xl font-bold text-yellow-600">40% OFF</span>
+                                    <span class="text-gray-500 line-through text-sm ml-2">₹7,000</span>
+                                </div>
+                                <span class="deal-tag">Expires: 72h</span>
+                            </div>
+                            <button
+                                class="w-full bg-blue-500 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hotel Listings Section -->
+    <div class="bg-white rounded-xl scrollbar-hide">
+        <div class="container mx-auto p-6 ">
+            <h2 class="text-3xl font-bold text-blue-500 mb-4">
+                Popular Hotels
+            </h2>
+
+            <div class="overflow-x-auto flex space-x-4 carousel pb-4 scrollbar-hide">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Hotel 1 -->
+                    <a href="high-low.html">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://img.freepik.com/free-photo/modern-interior-design-interior_23-2151929502.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                                alt="Luxury Hotel 1" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Grand Hyatt Resort</h3>
+                                <p class="text-gray-600 text-sm mb-4">New York, USA</p>
+                                <div class="flex items-center text-yellow-500 mb-4">
+                                    <!-- Star ratings (visual only) -->
+                                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                                    <span class="text-gray-500 text-xs ml-2">(4.5/5)</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Experience unparalleled luxury and breathtaking city
+                                    views.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-blue-500">₹22,000
+                                        <span class="text-sm text-gray-500">/night</span></span>
+                                    <button
+                                        class="bg-blue-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Hotel Card 2 -->
+                    <a href="high-low.html">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://img.freepik.com/free-photo/futuristic-city-architecture_23-2151918950.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                                alt="Beach Resort" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Ocean Breeze Retreat</h3>
+                                <p class="text-gray-600 text-sm mb-4">Maldives</p>
+                                <div class="flex items-center text-yellow-500 mb-4">
+                                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                                    <span class="text-gray-500 text-xs ml-2">(5.0/5)</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Secluded villas with direct beach access for ultimate
+                                    relaxation.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-blue-500">₹15,000
+                                        <span class="text-sm text-gray-500">/night</span></span>
+                                    <button
+                                        class="bg-blue-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <!-- Hotel Card 3 -->
+                    <a href="high-low.html">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://img.freepik.com/premium-photo/large-room-with-large-window-that-has-view-garden_1173591-1051.jpg?uid=R201119345&ga=GA1.1.2037589718.1747801611&semt=ais_hybrid&w=740"
+                                alt="City Hotel" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Urban Oasis Hotel</h3>
+                                <p class="text-gray-600 text-sm mb-4">London, UK</p>
+                                <div class="flex items-center text-yellow-500 mb-4">
+                                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                                    <span class="text-gray-500 text-xs ml-2">(4.0/5)</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">Modern comforts in the heart of the city, close to
+                                    attractions.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-blue-500">₹25,000
+                                        <span class="text-sm text-gray-500">/night</span></span>
+                                    <button
+                                        class="bg-blue-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-indigo-700 transition duration-300">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about balance -->
+    <section style="background: #d6f1ff; padding: 40px 20px;">
+        <div class="container">
+            <h3 style="font-weight: bold;">Book Hotels online</h3>
+            <p>Journey is India's largest and most preferred passenger airline and amongst the fastest growing
+                airlines
+                in the world. And now we have launched Journey Hotels to make your journey with us more pleasant
+                and
+                memorable.</p>
+            <p>Finding the perfect accommodation is crucial as it can elevate your travel experience from
+                ordinary to
+                extraordinary. No matter if you're planning a luxurious getaway on the islands, or a
+                budget-friendly
+                adventure to the mountains,
+                <a href="#" style="color: #0044cc; text-decoration: underline;">book hotels</a> that are just
+                right for
+                you to have a comfortable and memorable stay.
+            </p>
+
+            <a href="#" style="font-weight: bold; color: #0044cc; text-decoration: underline;">Read More</a>
+
+            <h4 style="margin-top: 30px; font-weight: bold;">Popular Domestic Flights</h4>
+            <p style="line-height: 1.8;">
+                Delhi Mumbai flights | Mumbai Delhi flights | Bangalore Delhi flights | Delhi Bangalore flights
+                | Delhi
+                Goa flights | Goa Delhi flights | Mumbai Goa flights | Goa Mumbai flights | Delhi Pune flights |
+                Pune
+                Delhi flights | Bangalore Mumbai flights | Mumbai Bangalore flights | Ahmedabad Delhi flights |
+                Delhi
+                Ahmedabad flights | Bangalore Goa flights | Goa Bangalore flights | Delhi Kolkata flights |
+                Kolkata
+                Delhi flights | Delhi Chennai flights | Chennai Delhi flights | Delhi Jaipur Flights | Jaipur
+                Delhi
+                flights | Delhi Hyderabad flights | Hyderabad Delhi flights | Delhi Patna flights | Patna Delhi
+                flights
+                | Delhi Srinagar flights | Srinagar Delhi flights | Bangalore Pune flights | Pune Bangalore
+                flights |
+                Delhi Chandigarh flights | Chandigarh Delhi flights
+            </p>
+
+            <h4 style="margin-top: 30px; font-weight: bold;">Popular Domestic Destinations</h4>
+            <p style="line-height: 1.8;">
+                Ayodhya | Agra | Bengaluru | Dehradun | Goa | Jammu | Srinagar | Mumbai | Udaipur | Varanasi |
+                Amritsar
+                | Bagdogra | Bhubaneswar | Bhopal | Chandigarh | Chennai | Coimbatore | Gaya | Guwahati |
+                Hyderabad |
+                Jaipur | Jodhpur | Kolkata | Kozhikode | Lucknow | Leh | Madurai | Mysuru | Port Blair |
+                Prayagraj |
+                Pune | Shillong | Shirdi | Thiruvananthapuram | Tiruchirappalli | Tirupati | Dharamshala |
+                Aggati |
+                Jaisalmer | Deoghar | Visakhapatnam | Vadodra | Surat | Diu | Jagdalpur
+            </p>
+
+            <div style="margin-top: 40px; background: white; padding: 20px; border-radius: 10px;">
+                <strong>Powered By GlideTech Solutions</strong>
+                <p style="margin-top: 10px;">
+                    Hotel products and services are being offered by a third party i.e. GlideTech Solutions
+                    Private
+                    Limited (hereinafter “GlideTech”) on Journey's website.
+                    Therefore, Journey expressly disclaims any liability and/or responsibility for the content
+                    and/or
+                    accuracy of any information displayed and/or hotel products and services availed by the
+                    customers,
+                    which are offered by GlideTech on Journey's website. For any questions or concerns or
+                    complaints
+                    about such hotel products and services and related information, please contact GlideTech
+                    directly.
+                    Claims of any nature whatsoever, in this regard, will not be entertained by Journey. As
+                    such,
+                    customers are encouraged to exercise their sole discretion while opting for the hotel
+                    products and
+                    services being offered by GlideTech.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <section id="footer">
+        <footer class="bg-sky-200 py-10 px-6 myfont w-full font-semibold">
+            <div class="w-full sm:flex justify-evenly sm:justify-ccenter">
+                <div>
+                    <div class="flex items-center h-auto">
+                        <img width="50px" height="auto" src="./Media/logo.jpg" alt="">
+                        <h3 class="text-2xl font-bold ps-3">JOURNEY</h3>
+                    </div>
+                    <p class="text-m">Your trusted partner in travel – explore the world with ease and
+                        confidence.</p>
+                </div>
+                <div class="flex justify-between lg:justify-center mt-5 lg:gap-20">
+                    <div>
+                        <h4 class="font-semibold mb-3">Company</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class=" ps-5">
+                        <h4 class="font-semibold mb-3 text-black">Support</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4 text-xl">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-10 text-center text-gray-500 text-sm font-semibold lg:mb-0 mb-20">
+                © 2025 Journey. All rights reserved.
+            </div>
+        </footer>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    </div>
+</body>
+
+</html>
