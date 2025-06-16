@@ -2,10 +2,6 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
-    height: 300vh;
-}
-
 #header{
     height: 100vh;
 }
