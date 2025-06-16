@@ -1,4 +1,4 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -42,43 +42,47 @@ x<!DOCTYPE html>
 
     <!-- nav section  -->
     <nav
-        class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont">
-        <div class="flex items-center gap-4 ps-5">
-            <img class="h-12 navlink" src="./media/logo.png" alt="Logo">
-            <div class="text-white text-2xl md:text-3xl font-black navlink">JOURNEY</div>
-        </div>
-        <div class="hidden xl:flex gap-10 text-xl font-bold">
-            <a class="navlink text-white px-10" href="index.html">Home</a>
-            <a class="navlink text-white px-10" href="explore.html">Explore</a>
-            <a class="navlink text-white px-10" href="">Hotels</a>
-            <a class="navlink text-white px-10" href="">Flights</a>
-            <a class="navlink text-white px-10" href="">Contact</a>
-        </div>
-    </nav>
+            class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont">
+            <div class="flex items-center gap-4 ps-5">
+                <img class="h-12 navlink" src="./media/logo.png" alt="Logo">
+                <div class="text-white text-2xl md:text-3xl navlink font-extrabold">JOURNEY</div>
+            </div>
+            <div class="hidden xl:flex gap-10 text-xl font-bold">
+                <a class="navlink text-white px-10 py-1" href="index.html">Home</a>
+                <a class="navlink text-white px-10 py-1" href="explore.html">Explore</a>
+                <a class="navlink text-white px-10 py-1" href="hotel.html">Hotels</a>
+                <a class="navlink text-white px-10 py-1" href="">Flights</a>
+                <a class="navlink text-white px-10 py-1" href="index.html#footer">Contact</a>
+                <a href="login.html"><button class="border border-white px-10 py-1">
+                    Login
+                </button></a>
+            </div>
+        </nav>
     <nav id="navmobile">
-        <div class="flex fixed bottom-0 z-50 h-20 w-full justify-evenly bg-white xl:hidden">
-            <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
-                <i class="fa-light fa-house text-blue-600 text-2xl"></i>
-                <p class="text-slate-400 myfont text-xs">Home</p>
-            </a>
-            <a href="explore.html" class="flex flex-col items-center gap-2 justify-center">
-                <i class="fa-light fa-magnifying-glass text-blue-600 text-2xl"></i>
-                <p class="text-slate-400 myfont text-xs">Explore</p>
-            </a>
-            <a href="" class="flex flex-col items-center gap-2 justify-center">
-                <i class="fa-light fa-bed-front text-blue-600 text-2xl"></i>
-                <p class="text-slate-400 myfont text-xs">Hotels</p>
-            </a>
-            <a href="" class="flex flex-col items-center gap-2 justify-center">
-                <i class="fa-light fa-plane text-blue-600 text-2xl"></i>
-                <p class="text-slate-400 myfont text-xs">Flights</p>
-            </a>
-            <a href="" class="flex flex-col items-center gap-2 justify-center">
-                <i class="fa-light fa-phone text-blue-600 text-2xl"></i>
-                <p class="text-slate-400 myfont text-xs">Contact</p>
-            </a>
-        </div>
-    </nav>
+            <div class="text-white text-2xl font-extrabold myfont absolute top-10 left-1/2 transform -translate-x-1/2 xl:hidden">JOURNEY</div>
+            <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden">
+                <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-house text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Home</p>
+                </a>
+                <a href="explore.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-magnifying-glass text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Explore</p>
+                </a>
+                <a href="hotel.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-bed-front text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Hotels</p>
+                </a>
+                <a href="" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-plane text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Flights</p>
+                </a>
+                <a href="index.html#footer" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-phone text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Contact</p>
+                </a>
+            </div>
+        </nav>
 
     <!-- hero section  -->
         <section class="relative h-screen bg-cover bg-center flex items-center"
