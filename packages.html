@@ -16,6 +16,7 @@
 
     <!-- font awesome kit  -->
     <script src="https://kit.fontawesome.com/8cc8bfb38e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 
     <!-- tailwind css cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -36,8 +37,46 @@
 </head>
 
 <body>
+    <nav class="hidden xl:flex justify-between items-center w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont bg-white shadow-sm">
+    <div class="flex items-center gap-4 ps-5">
+      <img class="h-12 navlink" src="./media/logo.png" alt="Logo">
+      <div class="text-blue-500 text-2xl md:text-3xl font-black navlink">JOURNEY</div>
+    </div>
+    <div class="hidden xl:flex gap-10 text-xl font-bold">
+      <a class="navlink text-blue-500 px-10" href="index.html">Home</a>
+      <a class="navlink text-blue-500 px-10" href="explore.html">Explore</a>
+      <a class="navlink text-blue-500 px-10" href="hotel.html">Hotels</a>
+      <a class="navlink text-blue-500 px-10" href="intex.html">Flights</a>
+      <a class="navlink text-blue-500 px-10" href="intex.html#footer">Contact</a>
+    </div>
+  </nav>
+
+        <nav id="navmobile">
+            <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden">
+                <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-house text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Home</p>
+                </a>
+                <a href="explore.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-magnifying-glass text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Explore</p>
+                </a>
+                <a href="hotel.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-bed-front text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Hotels</p>
+                </a>
+                <a href="intex.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-plane text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Flights</p>
+                </a>
+                <a href="packages.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-phone text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Contact</p>
+                </a>
+            </div>
+        </nav>
     <!-- packages section  -->
-    <section class="bg-blue-50 px-4 py-10 myfont">
+    <section class=" px-4 py-10 myfont">
         <div class="text-center mb-8">
             <h2 class="text-xl md:text-2xl font-semibold">Don’t have the time to curate?</h2>
             <p class="text-gray-600 font-semibold mt-1">Instantly check out our best-selling packages</p>
@@ -111,6 +150,49 @@
         </div>
     </section>
 
+    <section id="footer">
+        <footer class="bg-blue-200 py-10 px-6 myfont w-full font-semibold mb-20 :mb-0">
+            <div class="w-full sm:flex justify-evenly">
+                <div>
+                    <div class="flex items-center h-auto">
+                        <img width="50px" height="auto" src="./media/logo.png" alt="">
+                        <h3 class="text-2xl font-bold ps-3">JOURNEY</h3>
+                    </div>
+                    <p class="text-m">Your trusted partner in travel – explore the world with ease and
+                        confidence.</p>
+                </div>
+                <div class="flex justify-between lg:justify-center mt-5 lg:gap-20">
+                    <div>
+                        <h4 class="font-semibold mb-3">Company</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class=" ps-5">
+                        <h4 class="font-semibold mb-3 text-black">Support</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4 text-xl">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-10 text-center text-gray-500 text-sm font-semibold">
+                © 2025 Journey. All rights reserved.
+            </div>
+        </footer>
 </body>
 
 </html>
