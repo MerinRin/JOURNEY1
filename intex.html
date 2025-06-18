@@ -40,7 +40,6 @@
 <body>
 
 
-  <!-- Desktop Navbar -->
   <nav class="hidden xl:flex justify-between items-center fixed w-full top-0 z-50 bg-transparent transition-colors duration-300 ease-in-out px-6 py-4 myfont bg-white shadow-sm">
     <div class="flex items-center gap-4 ps-5">
       <img class="h-12 navlink" src="./media/logo.png" alt="Logo">
@@ -54,6 +53,33 @@
       <a class="navlink text-blue-500 px-10" href="intex.html#footer">Contact</a>
     </div>
   </nav>
+
+ <nav id="navmobile">
+            <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden z-[9999]">
+                <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-house text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Home</p>
+                </a>
+                <a href="explore.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-magnifying-glass text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Explore</p>
+                </a>
+                <a href="hotel.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-bed-front text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Hotels</p>
+                </a>
+                <a href="intex.html" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-plane text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Flights</p>
+                </a>
+                <a href="intex.html#footer" class="flex flex-col items-center gap-2 justify-center">
+                    <i class="fa-light fa-phone text-blue-500 text-2xl"></i>
+                    <p class="text-slate-900 myfont text-xs">Contact</p>
+                </a>
+            </div>
+        </nav>
+
+  
 
   <!-- Page Header -->
   <section class="text-center py-24">
@@ -125,39 +151,6 @@
       <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg">Search Flights</button>
     </div>
   </section>
-
-  <!-- Mobile Bottom Navigation -->
- <nav id="navmobile">
-            <div class="flex fixed bottom-0 h-20 w-full justify-evenly bg-white xl:hidden z-[9999]">
-                <a href="index.html" class="flex flex-col items-center gap-2 justify-center">
-                    <i class="fa-light fa-house text-blue-500 text-2xl"></i>
-                    <p class="text-slate-900 myfont text-xs">Home</p>
-                </a>
-                <a href="explore.html" class="flex flex-col items-center gap-2 justify-center">
-                    <i class="fa-light fa-magnifying-glass text-blue-500 text-2xl"></i>
-                    <p class="text-slate-900 myfont text-xs">Explore</p>
-                </a>
-                <a href="hotel.html" class="flex flex-col items-center gap-2 justify-center">
-                    <i class="fa-light fa-bed-front text-blue-500 text-2xl"></i>
-                    <p class="text-slate-900 myfont text-xs">Hotels</p>
-                </a>
-                <a href="intex.html" class="flex flex-col items-center gap-2 justify-center">
-                    <i class="fa-light fa-plane text-blue-500 text-2xl"></i>
-                    <p class="text-slate-900 myfont text-xs">Flights</p>
-                </a>
-                <a href="intex.html#footer" class="flex flex-col items-center gap-2 justify-center">
-                    <i class="fa-light fa-phone text-blue-500 text-2xl"></i>
-                    <p class="text-slate-900 myfont text-xs">Contact</p>
-                </a>
-            </div>
-        </nav>
-
-  
-
-</body>
-</html>
-
-<!-----JAVASCRIPT-->
 
   <!-- Save on your journey section -->
 <section class="max-w-7xl mx-auto px-4 py-12">
@@ -344,12 +337,6 @@
 
   </div>
 </section>
-
-
-
-
-
-
 
 
 
@@ -563,9 +550,6 @@
 
   </div>
 </section>
-
-
-
 
     <section id="footer">
         <footer class="bg-blue-200 py-10 px-6 myfont w-full font-semibold">
